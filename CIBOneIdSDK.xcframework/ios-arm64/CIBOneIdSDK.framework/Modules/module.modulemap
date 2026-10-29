@@ -1,0 +1,8 @@
+framework module "CIBOneIdSDK" {
+    umbrella header "CIBOneIdSDK.h"
+
+    export *
+    module * { export * }
+
+    use Foundation
+}
