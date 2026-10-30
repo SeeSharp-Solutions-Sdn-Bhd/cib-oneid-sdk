@@ -9,7 +9,7 @@ Official binary distribution repository for the **CIB OneID Client SDK** support
 - **iOS XCFramework**: `CIBOneIdSDK.xcframework` (supports iOS Device arm64 and iOS Simulator arm64/x86_64).
 - **Swift Package Manager**: `Package.swift` ready for Xcode integration.
 - **CocoaPods Podspec**: `CIBOneIdSDK.podspec` for CocoaPods integration.
-- **Android AAR**: `android/ciboneid-sdk-core-1.0.0.aar` for Gradle integration.
+- **Android AAR**: `android/ciboneid-sdk-core-1.0.1.aar` for Gradle integration.
 
 ---
 
@@ -22,7 +22,7 @@ Official binary distribution repository for the **CIB OneID Client SDK** support
    ```
    https://github.com/SeeSharp-Solutions-Sdn-Bhd/cib-oneid-sdk.git
    ```
-3. Select **Up to Next Major Version** starting at `1.0.0` or select main branch.
+3. Select **Up to Next Major Version** starting at `1.0.1` or select main branch.
 4. Add `CIBOneIdSDK` to your application target.
 
 ### Option B: CocoaPods
@@ -30,7 +30,7 @@ Official binary distribution repository for the **CIB OneID Client SDK** support
 Add the following pod to your `Podfile`:
 
 ```ruby
-pod 'CIBOneIdSDK', :git => 'https://github.com/SeeSharp-Solutions-Sdn-Bhd/cib-oneid-sdk.git', :tag => '1.0.0'
+pod 'CIBOneIdSDK', :git => 'https://github.com/SeeSharp-Solutions-Sdn-Bhd/cib-oneid-sdk.git', :tag => '1.0.1'
 ```
 
 Then run:
@@ -59,12 +59,12 @@ Add your tenant credentials to your host app's `Info.plist`:
 
 ### Import AAR in Gradle
 
-1. Copy `android/ciboneid-sdk-core-1.0.0.aar` into your app project's `libs/` directory (e.g. `app/libs/ciboneid-sdk-core-1.0.0.aar`).
+1. Copy `android/ciboneid-sdk-core-1.0.1.aar` into your app project's `libs/` directory (e.g. `app/libs/ciboneid-sdk-core-1.0.1.aar`).
 2. Update your `app/build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation(files("libs/ciboneid-sdk-core-1.0.0.aar"))
+    implementation(files("libs/ciboneid-sdk-core-1.0.1.aar"))
 
     // Required transitives for CIB OneID SDK Core
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
