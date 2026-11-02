@@ -1,22 +1,20 @@
 # CIB OneID Client SDK Integration Guide (Android & iOS)
 
-
 This guide provides step-by-step instructions for integrating the **CIB OneID Client SDK** (`ciboneid-sdk-core`) into native **Android** (Kotlin) and **iOS** (Swift) applications.
 
 ---
 
 ## 1. Overview & SDK Capabilities
 
-The **CIB OneID Client SDK** is built on Kotlin Multiplatform (KMP) and delivers identity and authentication services across mobile and web platforms.
+The **CIB OneID Client SDK** is built on Kotlin Multiplatform (KMP) and delivers authentication services via `/api/client/*` endpoints across mobile and web platforms.
 
 ### Supported Features
 - **Host Application Configuration**: Platform-native configuration via `res/values/strings.xml` (Android) and `Info.plist` (iOS).
-- **Username & Password Authentication**: Local registration and login.
-- **Phone Number OTP**: Two-step OTP registration and OTP login flows.
-- **Embedded Social & Federated JIT Authentication**: Native UI embedded handshakes via `SocialAuthLauncher` for Google, Apple, Facebook, CIBMall, and Unified Auth Router.
-- **Automated Session Management**: Silent token refresh via Refresh Token Rotation (RTR) with thread-safe `Mutex` locking.
+- **Email Authentication**: Email registration and login via `/api/client/auth/register/email` and `/api/client/auth/login/email`.
+- **Phone Number OTP**: Two-step OTP registration and OTP login flows via `/api/client/auth/register/phone/*` and `/api/client/auth/login/phone/*`.
+- **Automated Session Management**: Client token refresh via `/api/client/auth/refreshtoken`.
+- **Logout & Account Deletion**: Revoke active sessions via `/api/client/auth/logout`, schedule account deletion via `/api/client/user/account`, and restore account via `/api/client/auth/account/restore`.
 - **Hardware-Backed Secure Storage**: Android `EncryptedSharedPreferences` (AES-256 GCM) and iOS Apple Keychain (`SecItem`).
-- **Profile Management & Revocation**: RFC 7009 compliant token revocation and user profile updates.
 
 ### System Requirements
 
@@ -40,14 +38,13 @@ The **CIB OneID Client SDK** is built on Kotlin Multiplatform (KMP) and delivers
    ```
 
 2. **Configure Parameters in `strings.xml`**
-   All required credentials (Tenant ID, App ID, Client ID, Secret, App Name) are provided by the host app inside `res/values/strings.xml`:
+   All required credentials (Tenant ID, App ID, Client ID, Secret) are provided by the host app inside `res/values/strings.xml`:
    ```xml
    <resources>
        <string name="cib_tenant_id">your-tenant-id</string>
        <string name="cib_app_id">app_android_v1</string>
        <string name="cib_client_id">cib_client_id</string>
        <string name="cib_client_secret">your-client-secret</string>
-       <string name="cib_app_name">My App</string>
    </resources>
    ```
 
@@ -90,8 +87,6 @@ The **CIB OneID Client SDK** is built on Kotlin Multiplatform (KMP) and delivers
    <string>cib_client_id</string>
    <key>CIBClientSecret</key>
    <string>your-client-secret</string>
-   <key>CIBAppName</key>
-   <string>My App</string>
    ```
 
 2. **Include Framework via Swift Package Manager (SPM)**
@@ -118,10 +113,7 @@ object CIBOneIdManager {
         private set
 
     fun initialize(context: Context) {
-        // Automatically reads cib_tenant_id, cib_app_id, cib_client_secret, cib_app_name from strings.xml
         val config = loadPlatformConfig(context)
-
-        // PlatformTokenStore requires Android Context for EncryptedSharedPreferences
         val tokenStore = PlatformTokenStore(context = context.applicationContext)
 
         client = CIBOneIdClient(
@@ -157,9 +149,7 @@ final class CIBOneIdManager {
     let client: CIBOneIdClient
 
     private init() {
-        // Automatically reads CIBTenantID, CIBAppID, CIBClientSecret, CIBAppName from Info.plist
         let config = CIBPlatformConfigKt.loadPlatformConfig(context: nil)
-
         let tokenStore = PlatformTokenStore(context: nil)
 
         self.client = CIBOneIdClient(
@@ -239,37 +229,6 @@ Authenticates a user using email and password (`POST /api/client/auth/login/emai
   }
   ```
 
-**Response Details:**
-- **Success Response Example (200 OK)**:
-  ```json
-  {
-    "status": "success",
-    "tokens": {
-      "accessToken": "eyJhbGciOiJFUzI1...",
-      "tokenType": "Bearer",
-      "expiresIn": 600,
-      "refreshToken": "rf_01a18bd9ad09d92c9e231"
-    },
-    "user": {
-      "id": "01a18b5d-4ba3-76fe-8e6d-b5d9051bc5d2",
-      "userName": "test@mail.com",
-      "email": "test@mail.com",
-      "firstName": null,
-      "lastName": null,
-      "extraFields": {
-        "userid": "123"
-      }
-    }
-  }
-  ```
-- **Failure Response Example (400/401)**:
-  ```json
-  {
-    "code": "INVALID_CREDENTIALS",
-    "message": "Invalid email or password."
-  }
-  ```
-
 **Android (Kotlin)**
 ```kotlin
 import com.cib.oneid.sdk.models.LoginEmailRequest
@@ -313,78 +272,7 @@ func loginWithEmail(email: String, password: String) async {
 
 ---
 
-### B. Username & Password Flow
-
-#### Registration
-
-**Android (Kotlin)**
-```kotlin
-import com.cib.oneid.sdk.models.RegisterTenantUserRequest
-import com.cib.oneid.sdk.models.CIBResult
-
-suspend fun registerUser(username: String, email: String, password: String) {
-    val request = RegisterTenantUserRequest(
-        username = username,
-        email = email,
-        password = password,
-        extraFields = mapOf("fullName" to "John Doe")
-    )
-
-    when (val result = CIBOneIdManager.client.register(request)) {
-        is CIBResult.Success -> println("Registered ID: ${result.data.id}")
-        is CIBResult.Failure -> println("Failed: ${result.error.message}")
-    }
-}
-```
-
-**iOS (Swift)**
-```swift
-import CIBOneIdSDK
-
-func registerUser(username: String, email: String, password: String) async {
-    let request = RegisterTenantUserRequest(
-        username: username,
-        email: email,
-        password: password,
-        phoneNumber: nil,
-        extraFields: ["fullName": "John Doe"],
-        appId: nil
-    )
-
-    do {
-        let result = try await CIBOneIdManager.shared.client.register(request: request)
-        if let success = result as? CIBResultSuccess<TenantUserDto> {
-            print("Registered: \(success.data.id)")
-        } else if let failure = result as? CIBResultFailure {
-            print("Error: \(failure.error.message)")
-        }
-    } catch {
-        print("Error: \(error)")
-    }
-}
-```
-
-#### Login
-
-**Android (Kotlin)**
-```kotlin
-suspend fun loginUser(identifier: String, password: String) {
-    CIBOneIdManager.client.login(identifier, password)
-        .onSuccess { tokens -> println("Login success: ${tokens.accessToken}") }
-        .onFailure { error -> println("Login failed: ${error.message}") }
-}
-```
-
-**iOS (Swift)**
-```swift
-func loginUser(identifier: String, password: String) async {
-    let result = try? await CIBOneIdManager.shared.client.login(identifier: identifier, password: password)
-}
-```
-
----
-
-### C. Phone Number OTP Flows (Client Auth)
+### B. Phone Number OTP Flows (Client Auth)
 
 #### 1. Phone Registration OTP Flow
 
@@ -423,76 +311,6 @@ let verifyResult = try await CIBOneIdManager.shared.client.verifyRegisterPhoneOt
 #### 2. Phone Login OTP Flow
 
 Authenticates a user using phone number OTP verification via client credentials (`POST /api/client/auth/login/phone/request-otp` and `POST /api/client/auth/login/phone/verify`).
-
-##### Step 1: Request Phone Login OTP
-- **Endpoint**: `POST {baseUrl}/api/client/auth/login/phone/request-otp`
-- **Headers**:
-  - `X-Client-Id`: `cib_client_id`
-  - `X-Client-Secret`: `cib_client_secret`
-  - `X-App-Id`: `cib_app_id`
-  - `X-Tenant-Id`: `cib_tenant_id`
-- **Request Body**:
-  ```json
-  {
-    "phone_number": "+60168361127"
-  }
-  ```
-- **Success Response Example (200 OK)**:
-  ```json
-  {
-    "status": "success",
-    "message": "OTP sent."
-  }
-  ```
-- **Failure Response Example (400/401)**:
-  ```json
-  {
-    "code": "INVALID_CREDENTIALS",
-    "message": "Invalid email or password."
-  }
-  ```
-
-##### Step 2: Verify Phone Login OTP
-- **Endpoint**: `POST {baseUrl}/api/client/auth/login/phone/verify`
-- **Headers**:
-  - `X-Client-Id`: `cib_client_id`
-  - `X-Client-Secret`: `cib_client_secret`
-  - `X-App-Id`: `cib_app_id`
-  - `X-Tenant-Id`: `cib_tenant_id`
-- **Request Body**:
-  ```json
-  {
-    "phone_number": "+60168361127",
-    "otp": "201667"
-  }
-  ```
-- **Success Response Example (200 OK)**:
-  ```json
-  {
-    "status": "success",
-    "tokens": {
-      "accessToken": "eyJhbGciOiJFUz4HO1ok6KWpj6DIwYSJ7Rimhp23dBoQ3bAtE2mbofDoQ4zKA",
-      "tokenType": "Bearer",
-      "expiresIn": 600,
-      "refreshToken": "rf_01a18be398aa76cf816d146ddec153c5"
-    },
-    "user": {
-      "id": "01a18be2-7302-7095-8144-6d8e4c238cd0",
-      "userName": "+60168361127",
-      "phoneNumber": "+60168361127",
-      "firstName": null,
-      "lastName": null,
-      "extraFields": {}
-    }
-  }
-  ```
-- **Failure Response Example (400/401)**:
-  ```json
-  {
-    "code": "INVALID_CREDENTIALS",
-    "message": "Invalid email or password."
-  }
-  ```
 
 **Android (Kotlin)**
 ```kotlin
@@ -534,57 +352,9 @@ let verifyResult = try await CIBOneIdManager.shared.client.verifyLoginPhoneOtp(p
 
 ---
 
-### D. Client Refresh Token Flow
+### C. Client Refresh Token Flow
 
 Refreshes the user's session tokens via client credentials (`POST /api/client/auth/refreshtoken`). Upon success, updated session tokens (`accessToken`, `refreshToken`) are returned and automatically saved to the hardware-backed `TokenStore`. If a breach or invalid grant is detected (`BREACH_DETECTED` or `invalid_grant`), local tokens are automatically cleared.
-
-##### Request API Details
-- **Endpoint**: `POST {baseUrl}/api/client/auth/refreshtoken`
-- **Headers**:
-  - `X-Client-Id`: `cib_client_id`
-  - `X-Client-Secret`: `cib_client_secret`
-  - `X-App-Id`: `cib_app_id`
-  - `X-Tenant-Id`: `cib_tenant_id`
-- **Request Body**:
-  ```json
-  {
-    "refresh_token": "rf_01a18be398.."
-  }
-  ```
-
-##### Response Details
-- **Success Response Example (200 OK)**:
-  ```json
-  {
-    "status": "success",
-    "token_type": "Bearer",
-    "expires_in": 600,
-    "refresh_token": "rf_01a18bea53637eda918f3c7dabe3b4af",
-    "tokens": {
-      "accessToken": "SwiY3VzdG9tX3BhcmFtZXRlcnMiOnt9LCJhcHBfaWQiOiJwaW50YXJhaSJ9.qCx7GVEhSd4tU371JNYjOFQX8C1iS8FSrviUVNqOiULIwddWtJ7_l_ZLGWAw8NXvxm8u8QjgvQ0gCyaVYWFl1w",
-      "tokenType": "Bearer",
-      "expiresIn": 600,
-      "refreshToken": "rf_01a18bea53637eda918f3c7dabe3b4af"
-    },
-    "user": {
-      "id": "01a18be2-7302-7095-8144-6d8e4c238cd0",
-      "userName": "+60168361127",
-      "email": null,
-      "phoneNumber": "+60168361127",
-      "firstName": null,
-      "lastName": null,
-      "extraFields": {}
-    }
-  }
-  ```
-- **Failure Response Example (400/401)**:
-  ```json
-  {
-    "code": "BREACH_DETECTED",
-    "error": "invalid_grant",
-    "message": "Replay attack detected. Token family has been revoked."
-  }
-  ```
 
 **Android (Kotlin)**
 ```kotlin
@@ -605,11 +375,6 @@ suspend fun refreshSession() {
             println("Refresh Failed [${result.error.code}]: ${result.error.message}")
         }
     }
-}
-
-// Or supply an explicit refresh token
-suspend fun refreshExplicit(refreshToken: String) {
-    val result = CIBOneIdManager.client.refreshToken(refreshToken = refreshToken)
 }
 ```
 
@@ -635,53 +400,9 @@ func refreshSession() async {
 
 ---
 
-### E. Embedded Social Logins (Google, Apple, Facebook)
+### D. Session & Account Lifecycle
 
-The host app passes the UI context (`ComponentActivity` on Android, `UIViewController` on iOS) via `SocialAuthLauncher`.
-
-#### Google Embedded Login
-```kotlin
-// Android (Kotlin in ComponentActivity)
-suspend fun loginGoogle() {
-    val launcher = SocialAuthLauncher(activity = this)
-    CIBOneIdManager.client.loginWithGoogle(launcher = launcher)
-        .onSuccess { tokens -> println("Google Login Success") }
-}
-```
-
-```swift
-// iOS (Swift in UIViewController)
-func loginGoogle() async {
-    let launcher = SocialAuthLauncher(viewController: self)
-    let result = try? await CIBOneIdManager.shared.client.loginWithGoogle(launcher: launcher, serverClientId: "")
-}
-```
-
-#### Apple & Facebook Embedded Login
-```kotlin
-// Apple
-suspend fun loginApple(launcher: SocialAuthLauncher) {
-    CIBOneIdManager.client.loginWithApple(launcher)
-}
-
-// Facebook
-suspend fun loginFacebook(launcher: SocialAuthLauncher) {
-    CIBOneIdManager.client.loginWithFacebook(launcher)
-}
-```
-
-#### Raw Token Overloads (For Custom/Headless UI)
-```kotlin
-cibClient.loginWithGoogleToken(idToken = "...", authCode = "...")
-cibClient.loginWithAppleToken(idToken = "...", authorizationCode = "...", userJson = null)
-cibClient.loginWithFacebookToken(accessToken = "...")
-```
-
----
-
-### F. Session & Profile Lifecycle
-
-#### Fetching Valid Access Token (Silent Auto-Refresh)
+#### 1. Fetching Valid Access Token
 ```kotlin
 suspend fun makeAuthenticatedApiCall() {
     when (val tokenResult = CIBOneIdManager.client.getValidAccessToken()) {
@@ -696,23 +417,117 @@ suspend fun makeAuthenticatedApiCall() {
 }
 ```
 
-#### User Profile & Logout
+#### 2. Logout Flow
+Revokes all active sessions on the server (`POST /api/client/auth/logout`) and clears tokens stored locally in `TokenStore`.
+
+**Android (Kotlin)**
 ```kotlin
-// Get Profile
-CIBOneIdManager.client.getProfile()
+suspend fun logoutUser() {
+    when (val result = CIBOneIdManager.client.logout()) {
+        is CIBResult.Success -> {
+            println("Logged out: ${result.data.message}")
+        }
+        is CIBResult.Failure -> {
+            println("Logout Failed [${result.error.code}]: ${result.error.message}")
+        }
+    }
+}
+```
 
-// Update Profile
-CIBOneIdManager.client.updateProfile(UpdateTenantUserProfileRequest(username = "newUsername"))
+**iOS (Swift)**
+```swift
+import CIBOneIdSDK
 
-// Logout (Revokes token & purges local secure storage)
-CIBOneIdManager.client.logout()
+func logoutUser() async {
+    do {
+        let result = try await CIBOneIdManager.shared.client.logout(accessToken: nil, clientId: nil, clientSecret: nil, appId: nil, tenantId: nil)
+        if let success = result as? CIBResultSuccess<LogoutResponse> {
+            print("Logged out: \(success.data.message ?? "")")
+        } else if let failure = result as? CIBResultFailure {
+            print("Logout Failed [\(failure.error.code)]: \(failure.error.message)")
+        }
+    } catch {
+        print("Error: \(error)")
+    }
+}
+```
+
+#### 3. Delete Account Flow
+Schedules the user account for deletion (`DELETE /api/client/user/account`) and clears stored tokens upon success.
+
+**Android (Kotlin)**
+```kotlin
+suspend fun deleteAccount() {
+    when (val result = CIBOneIdManager.client.deleteAccount()) {
+        is CIBResult.Success -> {
+            println("Account scheduled for deletion: ${result.data.message}")
+        }
+        is CIBResult.Failure -> {
+            println("Delete failed [${result.error.code}]: ${result.error.message}")
+        }
+    }
+}
+```
+
+**iOS (Swift)**
+```swift
+func deleteAccount() async {
+    do {
+        let result = try await CIBOneIdManager.shared.client.deleteAccount(accessToken: nil, clientId: nil, clientSecret: nil, appId: nil, tenantId: nil)
+        if let success = result as? CIBResultSuccess<DeleteAccountResponse> {
+            print("Delete response: \(success.data.message ?? "")")
+        }
+    } catch {
+        print("Error: \(error)")
+    }
+}
+```
+
+#### 4. Restore Deleted Account Flow
+Restores a scheduled-for-deletion / soft-deleted account (`POST /api/client/auth/account/restore`), returns new session tokens, and automatically saves them to `TokenStore`.
+
+**Android (Kotlin)**
+```kotlin
+import com.cib.oneid.sdk.models.RestoreAccountRequest
+
+suspend fun restoreUserAccount(email: String) {
+    when (val result = CIBOneIdManager.client.restoreAccount(email = email)) {
+        is CIBResult.Success -> {
+            println("Account restored!")
+            println("New Access Token: ${result.data.tokens?.accessToken}")
+            println("User: ${result.data.user?.userName}")
+        }
+        is CIBResult.Failure -> {
+            println("Restore failed [${result.error.code}]: ${result.error.message}")
+        }
+    }
+}
+```
+
+**iOS (Swift)**
+```swift
+func restoreAccount(email: String) async {
+    do {
+        let result = try await CIBOneIdManager.shared.client.restoreAccount(
+            email: email,
+            clientId: nil,
+            clientSecret: nil,
+            appId: nil,
+            tenantId: nil
+        )
+        if let success = result as? CIBResultSuccess<RestoreAccountResponse> {
+            print("Account restored: \(success.data.user?.userName ?? "")")
+        }
+    } catch {
+        print("Error: \(error)")
+    }
+}
 ```
 
 ---
 
 ## 5. Security & Best Practices Checklist
 
-- [x] **Host Configuration**: Application credentials (`tenantId`, `appId`, `clientSecret`, `appName`) provided via `strings.xml` (Android) and `Info.plist` (iOS).
+- [x] **Host Configuration**: Application credentials (`tenantId`, `appId`, `clientId`, `clientSecret`) provided via `strings.xml` (Android) and `Info.plist` (iOS).
 - [x] **Secure Storage**: Tokens encrypted via Android `EncryptedSharedPreferences` (AES-256 GCM) and iOS Keychain (`kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly`).
-- [x] **Embedded Social UI**: Abstraction via `SocialAuthLauncher` wraps `ComponentActivity` / `UIViewController`.
-- [x] **Refresh Token Rotation**: Automatic token rotation with 20s network grace period and `Mutex` concurrency protection.
+- [x] **Client Auth Endpoints**: All operations execute against `/api/client/*` endpoint suite.

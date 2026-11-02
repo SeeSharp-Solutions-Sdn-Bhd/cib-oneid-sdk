@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class CIBOISDKAppleCredentials, CIBOISDKAppleCredentialsCompanion, CIBOISDKAppleLoginRequest, CIBOISDKAppleLoginRequestCompanion, CIBOISDKAuthTokens, CIBOISDKAuthTokensCompanion, CIBOISDKCIBError, CIBOISDKCIBErrorCompanion, CIBOISDKCIBHttpClient, CIBOISDKCIBOneIdConfig, CIBOISDKCIBResult<__covariant T>, CIBOISDKCIBResultFailure, CIBOISDKCIBResultSuccess<__covariant T>, CIBOISDKCibMallLoginRequest, CIBOISDKCibMallLoginRequestCompanion, CIBOISDKFacebookLoginRequest, CIBOISDKFacebookLoginRequestCompanion, CIBOISDKGoogleCredentials, CIBOISDKGoogleCredentialsCompanion, CIBOISDKGoogleLoginRequest, CIBOISDKGoogleLoginRequestCompanion, CIBOISDKJwtUtils, CIBOISDKKotlinAbstractCoroutineContextElement, CIBOISDKKotlinAbstractCoroutineContextKey<B, E>, CIBOISDKKotlinArray<T>, CIBOISDKKotlinByteArray, CIBOISDKKotlinByteIterator, CIBOISDKKotlinCancellationException, CIBOISDKKotlinEnum<E>, CIBOISDKKotlinEnumCompanion, CIBOISDKKotlinException, CIBOISDKKotlinIllegalStateException, CIBOISDKKotlinKTypeProjection, CIBOISDKKotlinKTypeProjectionCompanion, CIBOISDKKotlinKVariance, CIBOISDKKotlinNothing, CIBOISDKKotlinRuntimeException, CIBOISDKKotlinThrowable, CIBOISDKKotlinUnit, CIBOISDKKotlinx_coroutines_coreCoroutineDispatcher, CIBOISDKKotlinx_coroutines_coreCoroutineDispatcherKey, CIBOISDKKotlinx_io_coreBuffer, CIBOISDKKotlinx_serialization_coreSerialKind, CIBOISDKKotlinx_serialization_coreSerializersModule, CIBOISDKKotlinx_serialization_jsonClassDiscriminatorMode, CIBOISDKKotlinx_serialization_jsonJson, CIBOISDKKotlinx_serialization_jsonJsonConfiguration, CIBOISDKKotlinx_serialization_jsonJsonDefault, CIBOISDKKotlinx_serialization_jsonJsonElement, CIBOISDKKotlinx_serialization_jsonJsonElementCompanion, CIBOISDKKtor_client_coreHttpClient, CIBOISDKKtor_client_coreHttpClientCall, CIBOISDKKtor_client_coreHttpClientCallCompanion, CIBOISDKKtor_client_coreHttpClientConfig<T>, CIBOISDKKtor_client_coreHttpClientEngineConfig, CIBOISDKKtor_client_coreHttpReceivePipeline, CIBOISDKKtor_client_coreHttpReceivePipelinePhases, CIBOISDKKtor_client_coreHttpRequestBuilder, CIBOISDKKtor_client_coreHttpRequestBuilderCompanion, CIBOISDKKtor_client_coreHttpRequestData, CIBOISDKKtor_client_coreHttpRequestPipeline, CIBOISDKKtor_client_coreHttpRequestPipelinePhases, CIBOISDKKtor_client_coreHttpResponse, CIBOISDKKtor_client_coreHttpResponseContainer, CIBOISDKKtor_client_coreHttpResponseData, CIBOISDKKtor_client_coreHttpResponsePipeline, CIBOISDKKtor_client_coreHttpResponsePipelinePhases, CIBOISDKKtor_client_coreHttpSendPipeline, CIBOISDKKtor_client_coreHttpSendPipelinePhases, CIBOISDKKtor_client_coreProxyConfig, CIBOISDKKtor_eventsEventDefinition<T>, CIBOISDKKtor_eventsEvents, CIBOISDKKtor_httpContentType, CIBOISDKKtor_httpContentTypeCompanion, CIBOISDKKtor_httpHeaderValueParam, CIBOISDKKtor_httpHeaderValueWithParameters, CIBOISDKKtor_httpHeaderValueWithParametersCompanion, CIBOISDKKtor_httpHeadersBuilder, CIBOISDKKtor_httpHttpMethod, CIBOISDKKtor_httpHttpMethodCompanion, CIBOISDKKtor_httpHttpProtocolVersion, CIBOISDKKtor_httpHttpProtocolVersionCompanion, CIBOISDKKtor_httpHttpStatusCode, CIBOISDKKtor_httpHttpStatusCodeCompanion, CIBOISDKKtor_httpOutgoingContent, CIBOISDKKtor_httpURLBuilder, CIBOISDKKtor_httpURLBuilderCompanion, CIBOISDKKtor_httpURLProtocol, CIBOISDKKtor_httpURLProtocolCompanion, CIBOISDKKtor_httpUrl, CIBOISDKKtor_httpUrlCompanion, CIBOISDKKtor_utilsAttributeKey<T>, CIBOISDKKtor_utilsGMTDate, CIBOISDKKtor_utilsGMTDateCompanion, CIBOISDKKtor_utilsMonth, CIBOISDKKtor_utilsMonthCompanion, CIBOISDKKtor_utilsPipeline<TSubject, TContext>, CIBOISDKKtor_utilsPipelinePhase, CIBOISDKKtor_utilsStringValuesBuilderImpl, CIBOISDKKtor_utilsTypeInfo, CIBOISDKKtor_utilsWeekDay, CIBOISDKKtor_utilsWeekDayCompanion, CIBOISDKLocalLoginRequest, CIBOISDKLocalLoginRequestCompanion, CIBOISDKLoginEmailRequest, CIBOISDKLoginEmailRequestCompanion, CIBOISDKLoginEmailResponse, CIBOISDKLoginEmailResponseCompanion, CIBOISDKLoginEmailUserDto, CIBOISDKLoginEmailUserDtoCompanion, CIBOISDKLoginPhoneOtpRequest, CIBOISDKLoginPhoneOtpRequestCompanion, CIBOISDKLoginPhoneOtpResponse, CIBOISDKLoginPhoneOtpResponseCompanion, CIBOISDKNativeSocialAuthBridge, CIBOISDKPlatformTokenStoreCompanion, CIBOISDKRefreshTokenClientRequest, CIBOISDKRefreshTokenClientRequestCompanion, CIBOISDKRefreshTokenResponse, CIBOISDKRefreshTokenResponseCompanion, CIBOISDKRefreshTokenUserDto, CIBOISDKRefreshTokenUserDtoCompanion, CIBOISDKRegisterEmailRequest, CIBOISDKRegisterEmailRequestCompanion, CIBOISDKRegisterEmailResponse, CIBOISDKRegisterEmailResponseCompanion, CIBOISDKRegisterPhoneOtpRequest, CIBOISDKRegisterPhoneOtpRequestCompanion, CIBOISDKRegisterPhoneOtpResponse, CIBOISDKRegisterPhoneOtpResponseCompanion, CIBOISDKRegisterTenantUserRequest, CIBOISDKRegisterTenantUserRequestCompanion, CIBOISDKRequestPhoneLoginOtpDto, CIBOISDKRequestPhoneLoginOtpDtoCompanion, CIBOISDKRequestPhoneOtpDto, CIBOISDKRequestPhoneOtpDtoCompanion, CIBOISDKSocialAuthLauncher, CIBOISDKTenantUserDto, CIBOISDKTenantUserDtoCompanion, CIBOISDKTokenCoordinator, CIBOISDKUnifiedAuthRequest, CIBOISDKUnifiedAuthRequestCompanion, CIBOISDKUpdateTenantUserProfileRequest, CIBOISDKUpdateTenantUserProfileRequestCompanion, CIBOISDKVerifyLoginPhoneOtpRequest, CIBOISDKVerifyLoginPhoneOtpRequestCompanion, CIBOISDKVerifyLoginPhoneOtpResponse, CIBOISDKVerifyLoginPhoneOtpResponseCompanion, CIBOISDKVerifyLoginPhoneUserDto, CIBOISDKVerifyLoginPhoneUserDtoCompanion, CIBOISDKVerifyPhoneLoginOtpDto, CIBOISDKVerifyPhoneLoginOtpDtoCompanion, CIBOISDKVerifyPhoneOtpDto, CIBOISDKVerifyPhoneOtpDtoCompanion, CIBOISDKVerifyRegisterPhoneOtpRequest, CIBOISDKVerifyRegisterPhoneOtpRequestCompanion, CIBOISDKVerifyRegisterPhoneOtpResponse, CIBOISDKVerifyRegisterPhoneOtpResponseCompanion, CIBOISDKVerifyRegisterPhoneUserDto, CIBOISDKVerifyRegisterPhoneUserDtoCompanion, UIViewController;
+@class CIBOISDKAppleCredentials, CIBOISDKAppleCredentialsCompanion, CIBOISDKAppleLoginRequest, CIBOISDKAppleLoginRequestCompanion, CIBOISDKAuthTokens, CIBOISDKAuthTokensCompanion, CIBOISDKCIBError, CIBOISDKCIBErrorCompanion, CIBOISDKCIBHttpClient, CIBOISDKCIBOneIdConfig, CIBOISDKCIBResult<__covariant T>, CIBOISDKCIBResultFailure, CIBOISDKCIBResultSuccess<__covariant T>, CIBOISDKCibMallLoginRequest, CIBOISDKCibMallLoginRequestCompanion, CIBOISDKDeleteAccountResponse, CIBOISDKDeleteAccountResponseCompanion, CIBOISDKFacebookLoginRequest, CIBOISDKFacebookLoginRequestCompanion, CIBOISDKGoogleCredentials, CIBOISDKGoogleCredentialsCompanion, CIBOISDKGoogleLoginRequest, CIBOISDKGoogleLoginRequestCompanion, CIBOISDKJwtUtils, CIBOISDKKotlinAbstractCoroutineContextElement, CIBOISDKKotlinAbstractCoroutineContextKey<B, E>, CIBOISDKKotlinArray<T>, CIBOISDKKotlinByteArray, CIBOISDKKotlinByteIterator, CIBOISDKKotlinCancellationException, CIBOISDKKotlinEnum<E>, CIBOISDKKotlinEnumCompanion, CIBOISDKKotlinException, CIBOISDKKotlinIllegalStateException, CIBOISDKKotlinKTypeProjection, CIBOISDKKotlinKTypeProjectionCompanion, CIBOISDKKotlinKVariance, CIBOISDKKotlinNothing, CIBOISDKKotlinRuntimeException, CIBOISDKKotlinThrowable, CIBOISDKKotlinUnit, CIBOISDKKotlinx_coroutines_coreCoroutineDispatcher, CIBOISDKKotlinx_coroutines_coreCoroutineDispatcherKey, CIBOISDKKotlinx_io_coreBuffer, CIBOISDKKotlinx_serialization_coreSerialKind, CIBOISDKKotlinx_serialization_coreSerializersModule, CIBOISDKKotlinx_serialization_jsonClassDiscriminatorMode, CIBOISDKKotlinx_serialization_jsonJson, CIBOISDKKotlinx_serialization_jsonJsonConfiguration, CIBOISDKKotlinx_serialization_jsonJsonDefault, CIBOISDKKotlinx_serialization_jsonJsonElement, CIBOISDKKotlinx_serialization_jsonJsonElementCompanion, CIBOISDKKtor_client_coreHttpClient, CIBOISDKKtor_client_coreHttpClientCall, CIBOISDKKtor_client_coreHttpClientCallCompanion, CIBOISDKKtor_client_coreHttpClientConfig<T>, CIBOISDKKtor_client_coreHttpClientEngineConfig, CIBOISDKKtor_client_coreHttpReceivePipeline, CIBOISDKKtor_client_coreHttpReceivePipelinePhases, CIBOISDKKtor_client_coreHttpRequestBuilder, CIBOISDKKtor_client_coreHttpRequestBuilderCompanion, CIBOISDKKtor_client_coreHttpRequestData, CIBOISDKKtor_client_coreHttpRequestPipeline, CIBOISDKKtor_client_coreHttpRequestPipelinePhases, CIBOISDKKtor_client_coreHttpResponse, CIBOISDKKtor_client_coreHttpResponseContainer, CIBOISDKKtor_client_coreHttpResponseData, CIBOISDKKtor_client_coreHttpResponsePipeline, CIBOISDKKtor_client_coreHttpResponsePipelinePhases, CIBOISDKKtor_client_coreHttpSendPipeline, CIBOISDKKtor_client_coreHttpSendPipelinePhases, CIBOISDKKtor_client_coreProxyConfig, CIBOISDKKtor_eventsEventDefinition<T>, CIBOISDKKtor_eventsEvents, CIBOISDKKtor_httpContentType, CIBOISDKKtor_httpContentTypeCompanion, CIBOISDKKtor_httpHeaderValueParam, CIBOISDKKtor_httpHeaderValueWithParameters, CIBOISDKKtor_httpHeaderValueWithParametersCompanion, CIBOISDKKtor_httpHeadersBuilder, CIBOISDKKtor_httpHttpMethod, CIBOISDKKtor_httpHttpMethodCompanion, CIBOISDKKtor_httpHttpProtocolVersion, CIBOISDKKtor_httpHttpProtocolVersionCompanion, CIBOISDKKtor_httpHttpStatusCode, CIBOISDKKtor_httpHttpStatusCodeCompanion, CIBOISDKKtor_httpOutgoingContent, CIBOISDKKtor_httpURLBuilder, CIBOISDKKtor_httpURLBuilderCompanion, CIBOISDKKtor_httpURLProtocol, CIBOISDKKtor_httpURLProtocolCompanion, CIBOISDKKtor_httpUrl, CIBOISDKKtor_httpUrlCompanion, CIBOISDKKtor_utilsAttributeKey<T>, CIBOISDKKtor_utilsGMTDate, CIBOISDKKtor_utilsGMTDateCompanion, CIBOISDKKtor_utilsMonth, CIBOISDKKtor_utilsMonthCompanion, CIBOISDKKtor_utilsPipeline<TSubject, TContext>, CIBOISDKKtor_utilsPipelinePhase, CIBOISDKKtor_utilsStringValuesBuilderImpl, CIBOISDKKtor_utilsTypeInfo, CIBOISDKKtor_utilsWeekDay, CIBOISDKKtor_utilsWeekDayCompanion, CIBOISDKLocalLoginRequest, CIBOISDKLocalLoginRequestCompanion, CIBOISDKLoginEmailRequest, CIBOISDKLoginEmailRequestCompanion, CIBOISDKLoginEmailResponse, CIBOISDKLoginEmailResponseCompanion, CIBOISDKLoginEmailUserDto, CIBOISDKLoginEmailUserDtoCompanion, CIBOISDKLoginPhoneOtpRequest, CIBOISDKLoginPhoneOtpRequestCompanion, CIBOISDKLoginPhoneOtpResponse, CIBOISDKLoginPhoneOtpResponseCompanion, CIBOISDKLogoutResponse, CIBOISDKLogoutResponseCompanion, CIBOISDKNativeSocialAuthBridge, CIBOISDKPlatformTokenStoreCompanion, CIBOISDKRefreshTokenClientRequest, CIBOISDKRefreshTokenClientRequestCompanion, CIBOISDKRefreshTokenResponse, CIBOISDKRefreshTokenResponseCompanion, CIBOISDKRefreshTokenUserDto, CIBOISDKRefreshTokenUserDtoCompanion, CIBOISDKRegisterEmailRequest, CIBOISDKRegisterEmailRequestCompanion, CIBOISDKRegisterEmailResponse, CIBOISDKRegisterEmailResponseCompanion, CIBOISDKRegisterPhoneOtpRequest, CIBOISDKRegisterPhoneOtpRequestCompanion, CIBOISDKRegisterPhoneOtpResponse, CIBOISDKRegisterPhoneOtpResponseCompanion, CIBOISDKRegisterTenantUserRequest, CIBOISDKRegisterTenantUserRequestCompanion, CIBOISDKRequestPhoneLoginOtpDto, CIBOISDKRequestPhoneLoginOtpDtoCompanion, CIBOISDKRequestPhoneOtpDto, CIBOISDKRequestPhoneOtpDtoCompanion, CIBOISDKRestoreAccountRequest, CIBOISDKRestoreAccountRequestCompanion, CIBOISDKRestoreAccountResponse, CIBOISDKRestoreAccountResponseCompanion, CIBOISDKRestoreAccountUserDto, CIBOISDKRestoreAccountUserDtoCompanion, CIBOISDKSocialAuthLauncher, CIBOISDKTenantUserDto, CIBOISDKTenantUserDtoCompanion, CIBOISDKTokenCoordinator, CIBOISDKUnifiedAuthRequest, CIBOISDKUnifiedAuthRequestCompanion, CIBOISDKUpdateTenantUserProfileRequest, CIBOISDKUpdateTenantUserProfileRequestCompanion, CIBOISDKVerifyLoginPhoneOtpRequest, CIBOISDKVerifyLoginPhoneOtpRequestCompanion, CIBOISDKVerifyLoginPhoneOtpResponse, CIBOISDKVerifyLoginPhoneOtpResponseCompanion, CIBOISDKVerifyLoginPhoneUserDto, CIBOISDKVerifyLoginPhoneUserDtoCompanion, CIBOISDKVerifyPhoneLoginOtpDto, CIBOISDKVerifyPhoneLoginOtpDtoCompanion, CIBOISDKVerifyPhoneOtpDto, CIBOISDKVerifyPhoneOtpDtoCompanion, CIBOISDKVerifyRegisterPhoneOtpRequest, CIBOISDKVerifyRegisterPhoneOtpRequestCompanion, CIBOISDKVerifyRegisterPhoneOtpResponse, CIBOISDKVerifyRegisterPhoneOtpResponseCompanion, CIBOISDKVerifyRegisterPhoneUserDto, CIBOISDKVerifyRegisterPhoneUserDtoCompanion, UIViewController;
 
 @protocol CIBOISDKKotlinAnnotation, CIBOISDKKotlinAutoCloseable, CIBOISDKKotlinComparable, CIBOISDKKotlinContinuation, CIBOISDKKotlinContinuationInterceptor, CIBOISDKKotlinCoroutineContext, CIBOISDKKotlinCoroutineContextElement, CIBOISDKKotlinCoroutineContextKey, CIBOISDKKotlinFunction, CIBOISDKKotlinIterator, CIBOISDKKotlinKAnnotatedElement, CIBOISDKKotlinKClass, CIBOISDKKotlinKClassifier, CIBOISDKKotlinKDeclarationContainer, CIBOISDKKotlinKType, CIBOISDKKotlinMapEntry, CIBOISDKKotlinSequence, CIBOISDKKotlinSuspendFunction2, CIBOISDKKotlinx_coroutines_coreChildHandle, CIBOISDKKotlinx_coroutines_coreChildJob, CIBOISDKKotlinx_coroutines_coreCoroutineScope, CIBOISDKKotlinx_coroutines_coreDisposableHandle, CIBOISDKKotlinx_coroutines_coreJob, CIBOISDKKotlinx_coroutines_coreParentJob, CIBOISDKKotlinx_coroutines_coreRunnable, CIBOISDKKotlinx_coroutines_coreSelectClause, CIBOISDKKotlinx_coroutines_coreSelectClause0, CIBOISDKKotlinx_coroutines_coreSelectInstance, CIBOISDKKotlinx_io_coreRawSink, CIBOISDKKotlinx_io_coreRawSource, CIBOISDKKotlinx_io_coreSink, CIBOISDKKotlinx_io_coreSource, CIBOISDKKotlinx_serialization_coreCompositeDecoder, CIBOISDKKotlinx_serialization_coreCompositeEncoder, CIBOISDKKotlinx_serialization_coreDecoder, CIBOISDKKotlinx_serialization_coreDeserializationStrategy, CIBOISDKKotlinx_serialization_coreEncoder, CIBOISDKKotlinx_serialization_coreKSerializer, CIBOISDKKotlinx_serialization_coreSerialDescriptor, CIBOISDKKotlinx_serialization_coreSerialFormat, CIBOISDKKotlinx_serialization_coreSerializationStrategy, CIBOISDKKotlinx_serialization_coreSerializersModuleCollector, CIBOISDKKotlinx_serialization_coreStringFormat, CIBOISDKKotlinx_serialization_jsonJsonNamingStrategy, CIBOISDKKtor_client_coreHttpClientEngine, CIBOISDKKtor_client_coreHttpClientEngineCapability, CIBOISDKKtor_client_coreHttpClientPlugin, CIBOISDKKtor_client_coreHttpRequest, CIBOISDKKtor_httpHeaders, CIBOISDKKtor_httpHttpMessage, CIBOISDKKtor_httpHttpMessageBuilder, CIBOISDKKtor_httpParameters, CIBOISDKKtor_httpParametersBuilder, CIBOISDKKtor_ioByteReadChannel, CIBOISDKKtor_ioCloseable, CIBOISDKKtor_utilsAttributes, CIBOISDKKtor_utilsStringValues, CIBOISDKKtor_utilsStringValuesBuilder, CIBOISDKTokenStore;
 
@@ -153,49 +153,13 @@ __attribute__((swift_name("CIBOneIdClient")))
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)getProfileWithCompletionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKTenantUserDto *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getProfile(completionHandler:)")));
+- (void)deleteAccountAccessToken:(NSString * _Nullable)accessToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKDeleteAccountResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("deleteAccount(accessToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
 - (void)getValidAccessTokenWithCompletionHandler:(void (^)(CIBOISDKCIBResult<NSString *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getValidAccessToken(completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)loginRequest:(CIBOISDKLocalLoginRequest *)request completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKAuthTokens *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("login(request:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)loginIdentifier:(NSString *)identifier password:(NSString *)password completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKAuthTokens *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("login(identifier:password:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)loginUnifiedRequest:(CIBOISDKUnifiedAuthRequest *)request completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKAuthTokens *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginUnified(request:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)loginWithAppleLauncher:(CIBOISDKSocialAuthLauncher *)launcher completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKAuthTokens *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithApple(launcher:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)loginWithAppleTokenIdToken:(NSString * _Nullable)idToken authorizationCode:(NSString * _Nullable)authorizationCode userJson:(NSString * _Nullable)userJson completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKAuthTokens *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithAppleToken(idToken:authorizationCode:userJson:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)loginWithCibMallCibAccount:(NSString *)cibAccount password:(NSString *)password completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKAuthTokens *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithCibMall(cibAccount:password:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
@@ -213,31 +177,7 @@ __attribute__((swift_name("CIBOneIdClient")))
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)loginWithFacebookLauncher:(CIBOISDKSocialAuthLauncher *)launcher permissions:(NSArray<NSString *> *)permissions completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKAuthTokens *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(launcher:permissions:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)loginWithFacebookTokenAccessToken:(NSString *)accessToken completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKAuthTokens *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebookToken(accessToken:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)loginWithGoogleLauncher:(CIBOISDKSocialAuthLauncher *)launcher serverClientId:(NSString *)serverClientId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKAuthTokens *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithGoogle(launcher:serverClientId:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)loginWithGoogleTokenIdToken:(NSString * _Nullable)idToken authCode:(NSString * _Nullable)authCode completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKAuthTokens *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithGoogleToken(idToken:authCode:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)logoutWithCompletionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKKotlinUnit *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("logout(completionHandler:)")));
+- (void)logoutAccessToken:(NSString * _Nullable)accessToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLogoutResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("logout(accessToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
@@ -250,12 +190,6 @@ __attribute__((swift_name("CIBOneIdClient")))
  * Other uncaught Kotlin exceptions are fatal.
 */
 - (void)refreshTokenRefreshToken:(NSString * _Nullable)refreshToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRefreshTokenResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("refreshToken(refreshToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)registerRequest:(CIBOISDKRegisterTenantUserRequest *)request completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKTenantUserDto *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("register(request:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
@@ -285,18 +219,6 @@ __attribute__((swift_name("CIBOneIdClient")))
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)requestPhoneLoginOtpPhoneNumber:(NSString *)phoneNumber completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKKotlinUnit *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("requestPhoneLoginOtp(phoneNumber:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)requestPhoneRegistrationOtpPhoneNumber:(NSString *)phoneNumber email:(NSString * _Nullable)email completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKKotlinUnit *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("requestPhoneRegistrationOtp(phoneNumber:email:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
 - (void)requestRegisterPhoneOtpRequest:(CIBOISDKRegisterPhoneOtpRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRegisterPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("requestRegisterPhoneOtp(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
@@ -309,7 +231,13 @@ __attribute__((swift_name("CIBOneIdClient")))
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)updateProfileRequest:(CIBOISDKUpdateTenantUserProfileRequest *)request completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKTenantUserDto *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("updateProfile(request:completionHandler:)")));
+- (void)restoreAccountEmail:(NSString *)email clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRestoreAccountResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("restoreAccount(email:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)restoreAccountRequest:(CIBOISDKRestoreAccountRequest *)request accessToken:(NSString * _Nullable)accessToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRestoreAccountResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("restoreAccount(request:accessToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
@@ -322,18 +250,6 @@ __attribute__((swift_name("CIBOneIdClient")))
  * Other uncaught Kotlin exceptions are fatal.
 */
 - (void)verifyLoginPhoneOtpPhoneNumber:(NSString *)phoneNumber otp:(NSString *)otp clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKVerifyLoginPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("verifyLoginPhoneOtp(phoneNumber:otp:clientId:clientSecret:appId:tenantId:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)verifyPhoneLoginOtpPhoneNumber:(NSString *)phoneNumber otp:(NSString *)otp completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKAuthTokens *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("verifyPhoneLoginOtp(phoneNumber:otp:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)verifyPhoneRegistrationOtpRequest:(CIBOISDKVerifyPhoneOtpDto *)request completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKAuthTokens *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("verifyPhoneRegistrationOtp(request:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
@@ -600,6 +516,44 @@ __attribute__((swift_name("CibMallLoginRequest.Companion")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) CIBOISDKCibMallLoginRequestCompanion *shared __attribute__((swift_name("shared")));
+- (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DeleteAccountResponse")))
+@interface CIBOISDKDeleteAccountResponse : CIBOISDKBase
+- (instancetype)initWithStatus:(NSString * _Nullable)status message:(NSString * _Nullable)message __attribute__((swift_name("init(status:message:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) CIBOISDKDeleteAccountResponseCompanion *companion __attribute__((swift_name("companion")));
+- (CIBOISDKDeleteAccountResponse *)doCopyStatus:(NSString * _Nullable)status message:(NSString * _Nullable)message __attribute__((swift_name("doCopy(status:message:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="message")
+*/
+@property (readonly) NSString * _Nullable message __attribute__((swift_name("message")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="status")
+*/
+@property (readonly) NSString * _Nullable status __attribute__((swift_name("status")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DeleteAccountResponse.Companion")))
+@interface CIBOISDKDeleteAccountResponseCompanion : CIBOISDKBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) CIBOISDKDeleteAccountResponseCompanion *shared __attribute__((swift_name("shared")));
 - (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
@@ -978,6 +932,44 @@ __attribute__((swift_name("LoginPhoneOtpResponse.Companion")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) CIBOISDKLoginPhoneOtpResponseCompanion *shared __attribute__((swift_name("shared")));
+- (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("LogoutResponse")))
+@interface CIBOISDKLogoutResponse : CIBOISDKBase
+- (instancetype)initWithStatus:(NSString * _Nullable)status message:(NSString * _Nullable)message __attribute__((swift_name("init(status:message:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) CIBOISDKLogoutResponseCompanion *companion __attribute__((swift_name("companion")));
+- (CIBOISDKLogoutResponse *)doCopyStatus:(NSString * _Nullable)status message:(NSString * _Nullable)message __attribute__((swift_name("doCopy(status:message:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="message")
+*/
+@property (readonly) NSString * _Nullable message __attribute__((swift_name("message")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="status")
+*/
+@property (readonly) NSString * _Nullable status __attribute__((swift_name("status")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("LogoutResponse.Companion")))
+@interface CIBOISDKLogoutResponseCompanion : CIBOISDKBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) CIBOISDKLogoutResponseCompanion *shared __attribute__((swift_name("shared")));
 - (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
@@ -1418,6 +1410,168 @@ __attribute__((swift_name("RequestPhoneOtpDto.Companion")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) CIBOISDKRequestPhoneOtpDtoCompanion *shared __attribute__((swift_name("shared")));
+- (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("RestoreAccountRequest")))
+@interface CIBOISDKRestoreAccountRequest : CIBOISDKBase
+- (instancetype)initWithEmail:(NSString * _Nullable)email identifier:(NSString * _Nullable)identifier phoneNumber:(NSString * _Nullable)phoneNumber username:(NSString * _Nullable)username password:(NSString * _Nullable)password __attribute__((swift_name("init(email:identifier:phoneNumber:username:password:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) CIBOISDKRestoreAccountRequestCompanion *companion __attribute__((swift_name("companion")));
+- (CIBOISDKRestoreAccountRequest *)doCopyEmail:(NSString * _Nullable)email identifier:(NSString * _Nullable)identifier phoneNumber:(NSString * _Nullable)phoneNumber username:(NSString * _Nullable)username password:(NSString * _Nullable)password __attribute__((swift_name("doCopy(email:identifier:phoneNumber:username:password:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="email")
+*/
+@property (readonly) NSString * _Nullable email __attribute__((swift_name("email")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="identifier")
+*/
+@property (readonly) NSString * _Nullable identifier __attribute__((swift_name("identifier")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="password")
+*/
+@property (readonly) NSString * _Nullable password __attribute__((swift_name("password")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="phoneNumber")
+*/
+@property (readonly) NSString * _Nullable phoneNumber __attribute__((swift_name("phoneNumber")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="username")
+*/
+@property (readonly) NSString * _Nullable username __attribute__((swift_name("username")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("RestoreAccountRequest.Companion")))
+@interface CIBOISDKRestoreAccountRequestCompanion : CIBOISDKBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) CIBOISDKRestoreAccountRequestCompanion *shared __attribute__((swift_name("shared")));
+- (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("RestoreAccountResponse")))
+@interface CIBOISDKRestoreAccountResponse : CIBOISDKBase
+- (instancetype)initWithStatus:(NSString * _Nullable)status tokens:(CIBOISDKAuthTokens * _Nullable)tokens user:(CIBOISDKRestoreAccountUserDto * _Nullable)user __attribute__((swift_name("init(status:tokens:user:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) CIBOISDKRestoreAccountResponseCompanion *companion __attribute__((swift_name("companion")));
+- (CIBOISDKRestoreAccountResponse *)doCopyStatus:(NSString * _Nullable)status tokens:(CIBOISDKAuthTokens * _Nullable)tokens user:(CIBOISDKRestoreAccountUserDto * _Nullable)user __attribute__((swift_name("doCopy(status:tokens:user:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="status")
+*/
+@property (readonly) NSString * _Nullable status __attribute__((swift_name("status")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="tokens")
+*/
+@property (readonly) CIBOISDKAuthTokens * _Nullable tokens __attribute__((swift_name("tokens")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="user")
+*/
+@property (readonly) CIBOISDKRestoreAccountUserDto * _Nullable user __attribute__((swift_name("user")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("RestoreAccountResponse.Companion")))
+@interface CIBOISDKRestoreAccountResponseCompanion : CIBOISDKBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) CIBOISDKRestoreAccountResponseCompanion *shared __attribute__((swift_name("shared")));
+- (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("RestoreAccountUserDto")))
+@interface CIBOISDKRestoreAccountUserDto : CIBOISDKBase
+- (instancetype)initWithId:(NSString * _Nullable)id userName:(NSString * _Nullable)userName email:(NSString * _Nullable)email firstName:(NSString * _Nullable)firstName lastName:(NSString * _Nullable)lastName extraFields:(NSDictionary<NSString *, NSString *> * _Nullable)extraFields __attribute__((swift_name("init(id:userName:email:firstName:lastName:extraFields:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) CIBOISDKRestoreAccountUserDtoCompanion *companion __attribute__((swift_name("companion")));
+- (CIBOISDKRestoreAccountUserDto *)doCopyId:(NSString * _Nullable)id userName:(NSString * _Nullable)userName email:(NSString * _Nullable)email firstName:(NSString * _Nullable)firstName lastName:(NSString * _Nullable)lastName extraFields:(NSDictionary<NSString *, NSString *> * _Nullable)extraFields __attribute__((swift_name("doCopy(id:userName:email:firstName:lastName:extraFields:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="email")
+*/
+@property (readonly) NSString * _Nullable email __attribute__((swift_name("email")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="extraFields")
+*/
+@property (readonly) NSDictionary<NSString *, NSString *> * _Nullable extraFields __attribute__((swift_name("extraFields")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="firstName")
+*/
+@property (readonly) NSString * _Nullable firstName __attribute__((swift_name("firstName")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="id")
+*/
+@property (readonly) NSString * _Nullable id __attribute__((swift_name("id")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="lastName")
+*/
+@property (readonly) NSString * _Nullable lastName __attribute__((swift_name("lastName")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="userName")
+*/
+@property (readonly) NSString * _Nullable userName __attribute__((swift_name("userName")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("RestoreAccountUserDto.Companion")))
+@interface CIBOISDKRestoreAccountUserDtoCompanion : CIBOISDKBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) CIBOISDKRestoreAccountUserDtoCompanion *shared __attribute__((swift_name("shared")));
 - (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
@@ -2247,16 +2401,6 @@ __attribute__((swift_name("KotlinCancellationException")))
 - (instancetype)initWithMessage:(NSString * _Nullable)message cause:(CIBOISDKKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinUnit")))
-@interface CIBOISDKKotlinUnit : CIBOISDKBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)unit __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) CIBOISDKKotlinUnit *shared __attribute__((swift_name("shared")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@end
-
 __attribute__((swift_name("Kotlinx_serialization_coreSerializationStrategy")))
 @protocol CIBOISDKKotlinx_serialization_coreSerializationStrategy
 @required
@@ -2937,6 +3081,16 @@ __attribute__((swift_name("Ktor_client_coreHttpResponse")))
 @property (readonly) CIBOISDKKtor_utilsGMTDate *responseTime __attribute__((swift_name("responseTime")));
 @property (readonly) CIBOISDKKtor_httpHttpStatusCode *status __attribute__((swift_name("status")));
 @property (readonly) CIBOISDKKtor_httpHttpProtocolVersion *version __attribute__((swift_name("version")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinUnit")))
+@interface CIBOISDKKotlinUnit : CIBOISDKBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)unit __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) CIBOISDKKotlinUnit *shared __attribute__((swift_name("shared")));
+- (NSString *)description __attribute__((swift_name("description()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
