@@ -1,6 +1,5 @@
 # CIB OneID Client SDK Integration Guide (Android & iOS)
 
-
 This guide provides step-by-step instructions for integrating the **CIB OneID Client SDK** (`ciboneid-sdk-core`) into native **Android** (Kotlin) and **iOS** (Swift) applications.
 
 ---
@@ -39,14 +38,14 @@ The **CIB OneID Client SDK** is built on Kotlin Multiplatform (KMP) and delivers
    ```
 
 2. **Configure Parameters in `strings.xml`**
-   All required credentials (Tenant ID, App ID, Client ID, Secret, Google & Facebook IDs) are provided by the host app inside `res/values/strings.xml`:
+   All required credentials (Tenant ID, App ID, Client ID, Secret, Google & Facebook IDs) are provided by the host app inside `res/values/strings.xml`. The SDK supports standard HTTP header style (`x_tenant_id`), SDK prefix (`cib_tenant_id`), and PascalCase (`CIBTenantID`):
    ```xml
    <resources>
-       <!-- CIB OneID Core Credentials -->
-       <string name="cib_tenant_id">your-tenant-id</string>
-       <string name="cib_app_id">app_android_v1</string>
-       <string name="cib_client_id">cib_client_id</string>
-       <string name="cib_client_secret">your-client-secret</string>
+       <!-- CIB OneID Core Credentials (supports x_* or cib_* prefixes) -->
+       <string name="x_tenant_id">your-tenant-id</string>
+       <string name="x_app_id">app_android_v1</string>
+       <string name="x_client_id">cib_client_id</string>
+       <string name="x_client_secret">your-client-secret</string>
        <string name="cib_app_name">My Application</string>
 
        <!-- Google Sign-In (OAuth Web / Server Client ID) -->
@@ -59,6 +58,16 @@ The **CIB OneID Client SDK** is built on Kotlin Multiplatform (KMP) and delivers
        <string name="facebook_permissions">public_profile,email</string>
    </resources>
    ```
+
+   *Supported string key aliases:*
+   - **Tenant ID**: `x_tenant_id`, `X-Tenant-Id`, `cib_tenant_id`, `tenant_id`, `CIBTenantID`
+   - **App ID**: `x_app_id`, `X-App-Id`, `cib_app_id`, `app_id`, `CIBAppID`
+   - **Client ID**: `x_client_id`, `X-Client-Id`, `cib_client_id`, `client_id`, `CIBClientID`
+   - **Client Secret**: `x_client_secret`, `X-Client-Secret`, `cib_client_secret`, `client_secret`, `CIBClientSecret`
+   - **Google Server Client ID**: `google_server_client_id`, `default_web_client_id`, `cib_google_server_client_id`, `cib_google_client_id`
+   - **Facebook App ID**: `facebook_app_id`, `cib_facebook_app_id`
+   - **Facebook Client Token**: `facebook_client_token`, `cib_facebook_client_token`
+   - **Facebook Permissions**: `facebook_permissions`, `cib_facebook_permissions`
 
 3. **Configure `build.gradle.kts` (App Module)**
    Include the SDK module or published dependency:
@@ -89,16 +98,16 @@ The **CIB OneID Client SDK** is built on Kotlin Multiplatform (KMP) and delivers
 ### iOS Setup (Swift Package Manager & Info.plist)
 
 1. **Configure Parameters in `Info.plist`**
-   All required credentials are provided by the host app in `Info.plist`:
+   All required credentials are provided by the host app in `Info.plist`. The SDK supports standard HTTP header style (`X-Tenant-Id`), SDK prefix (`CIBTenantID`), and camelCase (`TenantId`):
    ```xml
-   <!-- CIB OneID Core Credentials -->
-   <key>CIBTenantID</key>
+   <!-- CIB OneID Core Credentials (supports X-* or CIB* keys) -->
+   <key>X-Tenant-Id</key>
    <string>your-tenant-id</string>
-   <key>CIBAppID</key>
+   <key>X-App-Id</key>
    <string>app_ios_v1</string>
-   <key>CIBClientID</key>
+   <key>X-Client-Id</key>
    <string>cib_client_id</string>
-   <key>CIBClientSecret</key>
+   <key>X-Client-Secret</key>
    <string>your-client-secret</string>
    <key>CIBAppName</key>
    <string>My Application</string>
@@ -116,7 +125,22 @@ The **CIB OneID Client SDK** is built on Kotlin Multiplatform (KMP) and delivers
    <string>your-facebook-client-token</string>
    <key>FacebookDisplayName</key>
    <string>My Application</string>
+   <key>FacebookPermissions</key>
+   <array>
+       <string>public_profile</string>
+       <string>email</string>
+   </array>
    ```
+
+   *Supported Info.plist key aliases:*
+   - **Tenant ID**: `X-Tenant-Id`, `X-Tenant-ID`, `x_tenant_id`, `CIBTenantID`, `CIBTenantId`, `cib_tenant_id`, `TenantId`
+   - **App ID**: `X-App-Id`, `X-App-ID`, `x_app_id`, `CIBAppID`, `CIBAppId`, `cib_app_id`, `AppId`
+   - **Client ID**: `X-Client-Id`, `X-Client-ID`, `x_client_id`, `CIBClientID`, `CIBClientId`, `cib_client_id`, `ClientId`
+   - **Client Secret**: `X-Client-Secret`, `x_client_secret`, `CIBClientSecret`, `cib_client_secret`, `ClientSecret`
+   - **Google Server Client ID**: `GIDServerClientID`, `GIDClientID`, `CIBGoogleServerClientID`, `GoogleServerClientID`
+   - **Facebook App ID**: `FacebookAppID`, `FacebookAppId`, `cib_facebook_app_id`, `CIBFacebookAppID`
+   - **Facebook Client Token**: `FacebookClientToken`, `cib_facebook_client_token`, `CIBFacebookClientToken`
+   - **Facebook Permissions**: `FacebookPermissions`, `CIBFacebookPermissions`
 
 2. **Include Framework via Swift Package Manager (SPM)**
    - Build XCFramework: `./gradlew :ciboneid-sdk-core:assembleCIBOneIdSDKXCFramework`
