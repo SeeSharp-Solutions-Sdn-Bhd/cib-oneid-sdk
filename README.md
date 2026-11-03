@@ -40,16 +40,33 @@ pod install
 
 ### iOS Host Configuration (`Info.plist`)
 
-Add your tenant credentials to your host app's `Info.plist`:
+Add your tenant credentials and social configuration to your host app's `Info.plist`:
 
 ```xml
+<!-- CIB OneID Core Credentials -->
 <key>CIBTenantID</key>
 <string>your-tenant-id</string>
 <key>CIBAppID</key>
 <string>app_ios_v1</string>
+<key>CIBClientID</key>
+<string>your-client-id</string>
 <key>CIBClientSecret</key>
 <string>your-client-secret</string>
 <key>CIBAppName</key>
+<string>My App</string>
+
+<!-- Google Sign-In -->
+<key>GIDServerClientID</key>
+<string>your-google-server-client-id.apps.googleusercontent.com</string>
+<key>GIDClientID</key>
+<string>your-google-client-id.apps.googleusercontent.com</string>
+
+<!-- Facebook Sign-In -->
+<key>FacebookAppID</key>
+<string>your-facebook-app-id</string>
+<key>FacebookClientToken</key>
+<string>your-facebook-client-token</string>
+<key>FacebookDisplayName</key>
 <string>My App</string>
 ```
 
@@ -81,14 +98,25 @@ dependencies {
 
 ### Android Host Configuration (`res/values/strings.xml`)
 
-Add your tenant credentials to your app's `res/values/strings.xml`:
+Add your tenant credentials and social configuration to your app's `res/values/strings.xml`:
 
 ```xml
 <resources>
+    <!-- CIB OneID Core Credentials -->
     <string name="cib_tenant_id">your-tenant-id</string>
     <string name="cib_app_id">app_android_v1</string>
+    <string name="cib_client_id">your-client-id</string>
     <string name="cib_client_secret">your-client-secret</string>
     <string name="cib_app_name">My App</string>
+
+    <!-- Google Sign-In (OAuth Web / Server Client ID) -->
+    <string name="google_server_client_id">your-google-server-client-id.apps.googleusercontent.com</string>
+    <!-- Note: default_web_client_id from google-services.json is also automatically detected! -->
+
+    <!-- Facebook Sign-In -->
+    <string name="facebook_app_id">your-facebook-app-id</string>
+    <string name="facebook_client_token">your-facebook-client-token</string>
+    <string name="facebook_permissions">public_profile,email</string>
 </resources>
 ```
 
@@ -96,70 +124,38 @@ Add your tenant credentials to your app's `res/values/strings.xml`:
 
 ## 3. Quick Start & SDK Initialization
 
+All values (`clientId`, `clientSecret`, `appId`, `tenantId`, Google server client ID, Facebook App ID, etc.) are extracted automatically from `Info.plist` (iOS) or `strings.xml` (Android).
+
 ### iOS Usage (Swift)
 
 ```swift
 import CIBOneIdSDK
 
-// 1. Initialize Client & Storage (Loads credentials automatically from Info.plist)
-let config = CIBPlatformConfigKt.loadPlatformConfig(context: nil)
-let tokenStore = PlatformTokenStore(context: nil)
-let cibClient = CIBOneIdClient(config: config, tokenStore: tokenStore, customHttpClient: nil)
+// 1. Initialize Client (Auto-detects credentials from Info.plist)
+let client = CIBOneIdClient()
 
-// 2. Embedded Native Social Login
-let launcher = SocialAuthLauncher(viewController: self)
+// 2. Google Sign-In (One-liner: UI & credentials auto-resolved)
+let googleResult = try await client.loginWithGoogle()
 
-// Google Sign-In
-cibClient.loginWithGoogle(launcher: launcher, serverClientId: "YOUR_GOOGLE_SERVER_CLIENT_ID") { result, error in
-    if let tokens = result?.getOrNull() {
-        print("Logged in successfully! Access Token: \(tokens.accessToken)")
-    }
-}
-
-// Apple Sign-In
-cibClient.loginWithApple(launcher: launcher) { result, error in
-    if let tokens = result?.getOrNull() {
-        print("Apple login success!")
-    }
-}
-
-// 3. Username / Password Login
-cibClient.login(identifier: "user@example.com", password: "Password123!") { result, error in
-    if let tokens = result?.getOrNull() {
-        print("Logged in! Token: \(tokens.accessToken)")
-    }
-}
+// 3. Facebook Sign-In (One-liner: UI & credentials auto-resolved)
+let fbResult = try await client.loginWithFacebook()
 ```
 
 ### Android Usage (Kotlin)
 
 ```kotlin
 import com.cib.oneid.sdk.CIBOneIdClient
-import com.cib.oneid.sdk.network.loadPlatformConfig
-import com.cib.oneid.sdk.storage.PlatformTokenStore
-import com.cib.oneid.sdk.social.SocialAuthLauncher
 import kotlinx.coroutines.launch
 
-// 1. Initialize Client & Hardware Token Store (EncryptedSharedPreferences)
-val config = loadPlatformConfig(context) // Reads res/values/strings.xml
-val tokenStore = PlatformTokenStore(context = applicationContext)
-val cibClient = CIBOneIdClient(config = config, tokenStore = tokenStore)
-
-// 2. Embedded Native Social Login
-val launcher = SocialAuthLauncher(activity = this)
+// 1. Initialize Client (Auto-detects credentials from strings.xml)
+val client = CIBOneIdClient()
 
 lifecycleScope.launch {
-    // Google Sign-In
-    val googleResult = cibClient.loginWithGoogle(launcher = launcher)
-    googleResult.onSuccess { tokens ->
-        println("Google Login Success! Access Token: ${tokens.accessToken}")
-    }
+    // 2. Google Sign-In (One-liner: activity & credentials auto-resolved)
+    val googleResult = client.loginWithGoogle()
 
-    // Username / Password Login
-    val loginResult = cibClient.login(identifier = "user@example.com", password = "Password123!")
-    loginResult.onSuccess { tokens ->
-        println("Logged in! Token: ${tokens.accessToken}")
-    }
+    // 3. Facebook Sign-In (One-liner: activity & credentials auto-resolved)
+    val fbResult = client.loginWithFacebook()
 }
 ```
 

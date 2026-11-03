@@ -153,7 +153,8 @@ __attribute__((swift_name("CIBOneIdClient")))
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)deleteAccountAccessToken:(NSString * _Nullable)accessToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKDeleteAccountResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("deleteAccount(accessToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)deleteAccountAccessToken:(NSString * _Nullable)accessToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKDeleteAccountResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("deleteAccount(accessToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (CIBOISDKCIBOneIdConfig *)getEffectiveConfig __attribute__((swift_name("getEffectiveConfig()")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
@@ -165,139 +166,175 @@ __attribute__((swift_name("CIBOneIdClient")))
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)loginWithEmailRequest:(CIBOISDKLoginEmailRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginEmailResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithEmail(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithEmailRequest:(CIBOISDKLoginEmailRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginEmailResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithEmail(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)loginWithEmailEmail:(NSString *)email password:(NSString *)password clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginEmailResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithEmail(email:password:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithEmailEmail:(NSString *)email password:(NSString *)password clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginEmailResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithEmail(email:password:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)loginWithFacebookRequest:(CIBOISDKFacebookLoginRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginFacebookResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithFacebookWithCompletionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginFacebookResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)loginWithFacebookAccessToken:(NSString *)accessToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginFacebookResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(accessToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithFacebookLauncher:(CIBOISDKSocialAuthLauncher *)launcher completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginFacebookResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(launcher:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)loginWithFacebookLauncher:(CIBOISDKSocialAuthLauncher *)launcher permissions:(NSArray<NSString *> *)permissions clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginFacebookResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(launcher:permissions:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithFacebookAccessToken:(NSString *)accessToken completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginFacebookResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(accessToken:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)loginWithGoogleRequest:(CIBOISDKGoogleLoginRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginGoogleResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithGoogle(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithFacebookLauncher:(CIBOISDKSocialAuthLauncher *)launcher permissions:(NSArray<NSString *> *)permissions completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginFacebookResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(launcher:permissions:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)loginWithGoogleLauncher:(CIBOISDKSocialAuthLauncher *)launcher serverClientId:(NSString * _Nullable)serverClientId clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginGoogleResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithGoogle(launcher:serverClientId:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithFacebookRequest:(CIBOISDKFacebookLoginRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginFacebookResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)loginWithGoogleIdToken:(NSString * _Nullable)idToken authCode:(NSString * _Nullable)authCode clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginGoogleResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithGoogle(idToken:authCode:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithFacebookAccessToken:(NSString *)accessToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginFacebookResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(accessToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)logoutAccessToken:(NSString * _Nullable)accessToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLogoutResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("logout(accessToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithFacebookLauncher:(CIBOISDKSocialAuthLauncher *)launcher permissions:(NSArray<NSString *> *)permissions clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginFacebookResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(launcher:permissions:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)refreshTokenRequest:(CIBOISDKRefreshTokenClientRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRefreshTokenResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("refreshToken(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithGoogleWithCompletionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginGoogleResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithGoogle(completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)refreshTokenRefreshToken:(NSString * _Nullable)refreshToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRefreshTokenResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("refreshToken(refreshToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithGoogleLauncher:(CIBOISDKSocialAuthLauncher *)launcher completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginGoogleResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithGoogle(launcher:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)registerWithEmailRequest:(CIBOISDKRegisterEmailRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRegisterEmailResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("registerWithEmail(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithGoogleRequest:(CIBOISDKGoogleLoginRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginGoogleResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithGoogle(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)registerWithEmailEmail:(NSString *)email password:(NSString *)password clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRegisterEmailResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("registerWithEmail(email:password:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithGoogleLauncher:(CIBOISDKSocialAuthLauncher *)launcher serverClientId:(NSString * _Nullable)serverClientId clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginGoogleResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithGoogle(launcher:serverClientId:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)requestLoginPhoneOtpRequest:(CIBOISDKLoginPhoneOtpRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("requestLoginPhoneOtp(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)loginWithGoogleIdToken:(NSString * _Nullable)idToken authCode:(NSString * _Nullable)authCode clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginGoogleResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithGoogle(idToken:authCode:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)requestLoginPhoneOtpPhoneNumber:(NSString *)phoneNumber clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("requestLoginPhoneOtp(phoneNumber:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)logoutAccessToken:(NSString * _Nullable)accessToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLogoutResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("logout(accessToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)requestRegisterPhoneOtpRequest:(CIBOISDKRegisterPhoneOtpRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRegisterPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("requestRegisterPhoneOtp(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)refreshTokenRequest:(CIBOISDKRefreshTokenClientRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRefreshTokenResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("refreshToken(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)requestRegisterPhoneOtpPhoneNumber:(NSString *)phoneNumber clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRegisterPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("requestRegisterPhoneOtp(phoneNumber:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)refreshTokenRefreshToken:(NSString * _Nullable)refreshToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRefreshTokenResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("refreshToken(refreshToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)restoreAccountEmail:(NSString *)email clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRestoreAccountResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("restoreAccount(email:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)registerWithEmailRequest:(CIBOISDKRegisterEmailRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRegisterEmailResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("registerWithEmail(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)restoreAccountRequest:(CIBOISDKRestoreAccountRequest *)request accessToken:(NSString * _Nullable)accessToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRestoreAccountResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("restoreAccount(request:accessToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)registerWithEmailEmail:(NSString *)email password:(NSString *)password clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRegisterEmailResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("registerWithEmail(email:password:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)verifyLoginPhoneOtpRequest:(CIBOISDKVerifyLoginPhoneOtpRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKVerifyLoginPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("verifyLoginPhoneOtp(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)requestLoginPhoneOtpRequest:(CIBOISDKLoginPhoneOtpRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("requestLoginPhoneOtp(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)verifyLoginPhoneOtpPhoneNumber:(NSString *)phoneNumber otp:(NSString *)otp clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKVerifyLoginPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("verifyLoginPhoneOtp(phoneNumber:otp:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)requestLoginPhoneOtpPhoneNumber:(NSString *)phoneNumber clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("requestLoginPhoneOtp(phoneNumber:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)verifyRegisterPhoneOtpRequest:(CIBOISDKVerifyRegisterPhoneOtpRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKVerifyRegisterPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("verifyRegisterPhoneOtp(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)requestRegisterPhoneOtpRequest:(CIBOISDKRegisterPhoneOtpRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRegisterPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("requestRegisterPhoneOtp(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)verifyRegisterPhoneOtpPhoneNumber:(NSString *)phoneNumber otp:(NSString *)otp clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKVerifyRegisterPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("verifyRegisterPhoneOtp(phoneNumber:otp:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+- (void)requestRegisterPhoneOtpPhoneNumber:(NSString *)phoneNumber clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRegisterPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("requestRegisterPhoneOtp(phoneNumber:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)restoreAccountEmail:(NSString *)email clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRestoreAccountResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("restoreAccount(email:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)restoreAccountRequest:(CIBOISDKRestoreAccountRequest *)request accessToken:(NSString * _Nullable)accessToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKRestoreAccountResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("restoreAccount(request:accessToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)verifyLoginPhoneOtpRequest:(CIBOISDKVerifyLoginPhoneOtpRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKVerifyLoginPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("verifyLoginPhoneOtp(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)verifyLoginPhoneOtpPhoneNumber:(NSString *)phoneNumber otp:(NSString *)otp clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKVerifyLoginPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("verifyLoginPhoneOtp(phoneNumber:otp:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)verifyRegisterPhoneOtpRequest:(CIBOISDKVerifyRegisterPhoneOtpRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKVerifyRegisterPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("verifyRegisterPhoneOtp(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)verifyRegisterPhoneOtpPhoneNumber:(NSString *)phoneNumber otp:(NSString *)otp clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString * _Nullable)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKVerifyRegisterPhoneOtpResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("verifyRegisterPhoneOtp(phoneNumber:otp:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 @property (readonly) CIBOISDKCIBOneIdConfig *config __attribute__((swift_name("config")));
 @property (readonly) CIBOISDKCIBHttpClient *httpClient __attribute__((swift_name("httpClient")));
 @property (readonly) id<CIBOISDKTokenStore> tokenStore __attribute__((swift_name("tokenStore")));
@@ -2535,8 +2572,8 @@ __attribute__((swift_name("CIBHttpClient")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CIBOneIdConfig")))
 @interface CIBOISDKCIBOneIdConfig : CIBOISDKBase
-- (instancetype)initWithTenantId:(NSString *)tenantId appId:(NSString * _Nullable)appId clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appName:(NSString * _Nullable)appName __attribute__((swift_name("init(tenantId:appId:clientId:clientSecret:appName:)"))) __attribute__((objc_designated_initializer));
-- (CIBOISDKCIBOneIdConfig *)doCopyTenantId:(NSString *)tenantId appId:(NSString * _Nullable)appId clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appName:(NSString * _Nullable)appName __attribute__((swift_name("doCopy(tenantId:appId:clientId:clientSecret:appName:)")));
+- (instancetype)initWithTenantId:(NSString *)tenantId appId:(NSString * _Nullable)appId clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appName:(NSString * _Nullable)appName googleServerClientId:(NSString * _Nullable)googleServerClientId facebookAppId:(NSString * _Nullable)facebookAppId facebookClientToken:(NSString * _Nullable)facebookClientToken facebookPermissions:(NSArray<NSString *> * _Nullable)facebookPermissions __attribute__((swift_name("init(tenantId:appId:clientId:clientSecret:appName:googleServerClientId:facebookAppId:facebookClientToken:facebookPermissions:)"))) __attribute__((objc_designated_initializer));
+- (CIBOISDKCIBOneIdConfig *)doCopyTenantId:(NSString *)tenantId appId:(NSString * _Nullable)appId clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appName:(NSString * _Nullable)appName googleServerClientId:(NSString * _Nullable)googleServerClientId facebookAppId:(NSString * _Nullable)facebookAppId facebookClientToken:(NSString * _Nullable)facebookClientToken facebookPermissions:(NSArray<NSString *> * _Nullable)facebookPermissions __attribute__((swift_name("doCopy(tenantId:appId:clientId:clientSecret:appName:googleServerClientId:facebookAppId:facebookClientToken:facebookPermissions:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -2544,6 +2581,10 @@ __attribute__((swift_name("CIBOneIdConfig")))
 @property (readonly) NSString * _Nullable appName __attribute__((swift_name("appName")));
 @property (readonly) NSString * _Nullable clientId __attribute__((swift_name("clientId")));
 @property (readonly) NSString * _Nullable clientSecret __attribute__((swift_name("clientSecret")));
+@property (readonly) NSString * _Nullable facebookAppId __attribute__((swift_name("facebookAppId")));
+@property (readonly) NSString * _Nullable facebookClientToken __attribute__((swift_name("facebookClientToken")));
+@property (readonly) NSArray<NSString *> * _Nullable facebookPermissions __attribute__((swift_name("facebookPermissions")));
+@property (readonly) NSString * _Nullable googleServerClientId __attribute__((swift_name("googleServerClientId")));
 @property (readonly) NSString *tenantId __attribute__((swift_name("tenantId")));
 @end
 
@@ -2600,8 +2641,11 @@ __attribute__((swift_name("NativeSocialAuthBridge")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SocialAuthLauncher")))
 @interface CIBOISDKSocialAuthLauncher : CIBOISDKBase
-- (instancetype)initWithViewController:(UIViewController *)viewController __attribute__((swift_name("init(viewController:)"))) __attribute__((objc_designated_initializer));
-@property (readonly) UIViewController *viewController __attribute__((swift_name("viewController")));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithViewController:(UIViewController * _Nullable)viewController __attribute__((swift_name("init(viewController:)"))) __attribute__((objc_designated_initializer));
+- (UIViewController * _Nullable)resolveViewController __attribute__((swift_name("resolveViewController()")));
+@property (readonly) UIViewController * _Nullable viewController __attribute__((swift_name("viewController")));
 @end
 
 __attribute__((swift_name("TokenStore")))
