@@ -524,6 +524,102 @@ func restoreAccount(email: String) async {
 }
 ```
 
+#### 5. Google Sign-In Flow
+Triggers native sign-in with the official Google SDK (Play Services on Android, GoogleSignIn CocoaPod on iOS). When receiving `id_token` or `auth_code`, executes `POST /api/client/auth/login/google` with client headers (`X-Client-Id`, `X-Client-Secret`, `X-App-Id`, `X-Tenant-Id`), stores tokens, and returns user profile.
+
+**Android (Kotlin)**
+```kotlin
+import androidx.activity.ComponentActivity
+import com.cib.oneid.sdk.social.SocialAuthLauncher
+
+suspend fun signInWithGoogle(activity: ComponentActivity) {
+    val launcher = SocialAuthLauncher(activity)
+    when (val result = CIBOneIdManager.client.loginWithGoogle(launcher)) {
+        is CIBResult.Success -> {
+            println("Google Sign-In Successful!")
+            println("Access Token: ${result.data.tokens?.accessToken}")
+            println("User: ${result.data.user?.email}")
+        }
+        is CIBResult.Failure -> {
+            println("Google Sign-In failed [${result.error.code}]: ${result.error.message}")
+        }
+    }
+}
+```
+
+**iOS (Swift)**
+```swift
+import UIKit
+import CIBOneIdSDK
+
+func signInWithGoogle(viewController: UIViewController) async {
+    let launcher = SocialAuthLauncher(viewController: viewController)
+    do {
+        let result = try await CIBOneIdManager.shared.client.loginWithGoogle(
+            launcher: launcher,
+            serverClientId: nil,
+            clientId: nil,
+            clientSecret: nil,
+            appId: nil,
+            tenantId: nil
+        )
+        if let success = result as? CIBResultSuccess<LoginGoogleResponse> {
+            print("Google Sign-In Successful: \(success.data.user?.email ?? "")")
+        }
+    } catch {
+        print("Google Sign-In error: \(error)")
+    }
+}
+```
+
+#### 6. Facebook Sign-In Flow
+Triggers native sign-in using the official Facebook SDK (`facebook-login` on Android, `FBSDKLoginKit` CocoaPod on iOS). When receiving `access_token`, executes `POST /api/client/auth/login/facebook` with client headers (`X-Client-Id`, `X-Client-Secret`, `X-App-Id`, `X-Tenant-Id`), stores session tokens, and returns the authenticated user profile.
+
+**Android (Kotlin)**
+```kotlin
+import androidx.activity.ComponentActivity
+import com.cib.oneid.sdk.social.SocialAuthLauncher
+
+suspend fun signInWithFacebook(activity: ComponentActivity) {
+    val launcher = SocialAuthLauncher(activity)
+    when (val result = CIBOneIdManager.client.loginWithFacebook(launcher)) {
+        is CIBResult.Success -> {
+            println("Facebook Sign-In Successful!")
+            println("Access Token: ${result.data.tokens?.accessToken}")
+            println("User: ${result.data.user?.email}")
+        }
+        is CIBResult.Failure -> {
+            println("Facebook Sign-In failed [${result.error.code}]: ${result.error.message}")
+        }
+    }
+}
+```
+
+**iOS (Swift)**
+```swift
+import UIKit
+import CIBOneIdSDK
+
+func signInWithFacebook(viewController: UIViewController) async {
+    let launcher = SocialAuthLauncher(viewController: viewController)
+    do {
+        let result = try await CIBOneIdManager.shared.client.loginWithFacebook(
+            launcher: launcher,
+            permissions: ["public_profile", "email"],
+            clientId: nil,
+            clientSecret: nil,
+            appId: nil,
+            tenantId: nil
+        )
+        if let success = result as? CIBResultSuccess<LoginFacebookResponse> {
+            print("Facebook Sign-In Successful: \(success.data.user?.email ?? "")")
+        }
+    } catch {
+        print("Facebook Sign-In error: \(error)")
+    }
+}
+```
+
 ---
 
 ## 5. Security & Best Practices Checklist

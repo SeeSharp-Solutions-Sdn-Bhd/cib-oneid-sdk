@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class CIBOISDKAppleCredentials, CIBOISDKAppleCredentialsCompanion, CIBOISDKAppleLoginRequest, CIBOISDKAppleLoginRequestCompanion, CIBOISDKAuthTokens, CIBOISDKAuthTokensCompanion, CIBOISDKCIBError, CIBOISDKCIBErrorCompanion, CIBOISDKCIBHttpClient, CIBOISDKCIBOneIdConfig, CIBOISDKCIBResult<__covariant T>, CIBOISDKCIBResultFailure, CIBOISDKCIBResultSuccess<__covariant T>, CIBOISDKCibMallLoginRequest, CIBOISDKCibMallLoginRequestCompanion, CIBOISDKDeleteAccountResponse, CIBOISDKDeleteAccountResponseCompanion, CIBOISDKFacebookLoginRequest, CIBOISDKFacebookLoginRequestCompanion, CIBOISDKGoogleCredentials, CIBOISDKGoogleCredentialsCompanion, CIBOISDKGoogleLoginRequest, CIBOISDKGoogleLoginRequestCompanion, CIBOISDKJwtUtils, CIBOISDKKotlinAbstractCoroutineContextElement, CIBOISDKKotlinAbstractCoroutineContextKey<B, E>, CIBOISDKKotlinArray<T>, CIBOISDKKotlinByteArray, CIBOISDKKotlinByteIterator, CIBOISDKKotlinCancellationException, CIBOISDKKotlinEnum<E>, CIBOISDKKotlinEnumCompanion, CIBOISDKKotlinException, CIBOISDKKotlinIllegalStateException, CIBOISDKKotlinKTypeProjection, CIBOISDKKotlinKTypeProjectionCompanion, CIBOISDKKotlinKVariance, CIBOISDKKotlinNothing, CIBOISDKKotlinRuntimeException, CIBOISDKKotlinThrowable, CIBOISDKKotlinUnit, CIBOISDKKotlinx_coroutines_coreCoroutineDispatcher, CIBOISDKKotlinx_coroutines_coreCoroutineDispatcherKey, CIBOISDKKotlinx_io_coreBuffer, CIBOISDKKotlinx_serialization_coreSerialKind, CIBOISDKKotlinx_serialization_coreSerializersModule, CIBOISDKKotlinx_serialization_jsonClassDiscriminatorMode, CIBOISDKKotlinx_serialization_jsonJson, CIBOISDKKotlinx_serialization_jsonJsonConfiguration, CIBOISDKKotlinx_serialization_jsonJsonDefault, CIBOISDKKotlinx_serialization_jsonJsonElement, CIBOISDKKotlinx_serialization_jsonJsonElementCompanion, CIBOISDKKtor_client_coreHttpClient, CIBOISDKKtor_client_coreHttpClientCall, CIBOISDKKtor_client_coreHttpClientCallCompanion, CIBOISDKKtor_client_coreHttpClientConfig<T>, CIBOISDKKtor_client_coreHttpClientEngineConfig, CIBOISDKKtor_client_coreHttpReceivePipeline, CIBOISDKKtor_client_coreHttpReceivePipelinePhases, CIBOISDKKtor_client_coreHttpRequestBuilder, CIBOISDKKtor_client_coreHttpRequestBuilderCompanion, CIBOISDKKtor_client_coreHttpRequestData, CIBOISDKKtor_client_coreHttpRequestPipeline, CIBOISDKKtor_client_coreHttpRequestPipelinePhases, CIBOISDKKtor_client_coreHttpResponse, CIBOISDKKtor_client_coreHttpResponseContainer, CIBOISDKKtor_client_coreHttpResponseData, CIBOISDKKtor_client_coreHttpResponsePipeline, CIBOISDKKtor_client_coreHttpResponsePipelinePhases, CIBOISDKKtor_client_coreHttpSendPipeline, CIBOISDKKtor_client_coreHttpSendPipelinePhases, CIBOISDKKtor_client_coreProxyConfig, CIBOISDKKtor_eventsEventDefinition<T>, CIBOISDKKtor_eventsEvents, CIBOISDKKtor_httpContentType, CIBOISDKKtor_httpContentTypeCompanion, CIBOISDKKtor_httpHeaderValueParam, CIBOISDKKtor_httpHeaderValueWithParameters, CIBOISDKKtor_httpHeaderValueWithParametersCompanion, CIBOISDKKtor_httpHeadersBuilder, CIBOISDKKtor_httpHttpMethod, CIBOISDKKtor_httpHttpMethodCompanion, CIBOISDKKtor_httpHttpProtocolVersion, CIBOISDKKtor_httpHttpProtocolVersionCompanion, CIBOISDKKtor_httpHttpStatusCode, CIBOISDKKtor_httpHttpStatusCodeCompanion, CIBOISDKKtor_httpOutgoingContent, CIBOISDKKtor_httpURLBuilder, CIBOISDKKtor_httpURLBuilderCompanion, CIBOISDKKtor_httpURLProtocol, CIBOISDKKtor_httpURLProtocolCompanion, CIBOISDKKtor_httpUrl, CIBOISDKKtor_httpUrlCompanion, CIBOISDKKtor_utilsAttributeKey<T>, CIBOISDKKtor_utilsGMTDate, CIBOISDKKtor_utilsGMTDateCompanion, CIBOISDKKtor_utilsMonth, CIBOISDKKtor_utilsMonthCompanion, CIBOISDKKtor_utilsPipeline<TSubject, TContext>, CIBOISDKKtor_utilsPipelinePhase, CIBOISDKKtor_utilsStringValuesBuilderImpl, CIBOISDKKtor_utilsTypeInfo, CIBOISDKKtor_utilsWeekDay, CIBOISDKKtor_utilsWeekDayCompanion, CIBOISDKLocalLoginRequest, CIBOISDKLocalLoginRequestCompanion, CIBOISDKLoginEmailRequest, CIBOISDKLoginEmailRequestCompanion, CIBOISDKLoginEmailResponse, CIBOISDKLoginEmailResponseCompanion, CIBOISDKLoginEmailUserDto, CIBOISDKLoginEmailUserDtoCompanion, CIBOISDKLoginPhoneOtpRequest, CIBOISDKLoginPhoneOtpRequestCompanion, CIBOISDKLoginPhoneOtpResponse, CIBOISDKLoginPhoneOtpResponseCompanion, CIBOISDKLogoutResponse, CIBOISDKLogoutResponseCompanion, CIBOISDKNativeSocialAuthBridge, CIBOISDKPlatformTokenStoreCompanion, CIBOISDKRefreshTokenClientRequest, CIBOISDKRefreshTokenClientRequestCompanion, CIBOISDKRefreshTokenResponse, CIBOISDKRefreshTokenResponseCompanion, CIBOISDKRefreshTokenUserDto, CIBOISDKRefreshTokenUserDtoCompanion, CIBOISDKRegisterEmailRequest, CIBOISDKRegisterEmailRequestCompanion, CIBOISDKRegisterEmailResponse, CIBOISDKRegisterEmailResponseCompanion, CIBOISDKRegisterPhoneOtpRequest, CIBOISDKRegisterPhoneOtpRequestCompanion, CIBOISDKRegisterPhoneOtpResponse, CIBOISDKRegisterPhoneOtpResponseCompanion, CIBOISDKRegisterTenantUserRequest, CIBOISDKRegisterTenantUserRequestCompanion, CIBOISDKRequestPhoneLoginOtpDto, CIBOISDKRequestPhoneLoginOtpDtoCompanion, CIBOISDKRequestPhoneOtpDto, CIBOISDKRequestPhoneOtpDtoCompanion, CIBOISDKRestoreAccountRequest, CIBOISDKRestoreAccountRequestCompanion, CIBOISDKRestoreAccountResponse, CIBOISDKRestoreAccountResponseCompanion, CIBOISDKRestoreAccountUserDto, CIBOISDKRestoreAccountUserDtoCompanion, CIBOISDKSocialAuthLauncher, CIBOISDKTenantUserDto, CIBOISDKTenantUserDtoCompanion, CIBOISDKTokenCoordinator, CIBOISDKUnifiedAuthRequest, CIBOISDKUnifiedAuthRequestCompanion, CIBOISDKUpdateTenantUserProfileRequest, CIBOISDKUpdateTenantUserProfileRequestCompanion, CIBOISDKVerifyLoginPhoneOtpRequest, CIBOISDKVerifyLoginPhoneOtpRequestCompanion, CIBOISDKVerifyLoginPhoneOtpResponse, CIBOISDKVerifyLoginPhoneOtpResponseCompanion, CIBOISDKVerifyLoginPhoneUserDto, CIBOISDKVerifyLoginPhoneUserDtoCompanion, CIBOISDKVerifyPhoneLoginOtpDto, CIBOISDKVerifyPhoneLoginOtpDtoCompanion, CIBOISDKVerifyPhoneOtpDto, CIBOISDKVerifyPhoneOtpDtoCompanion, CIBOISDKVerifyRegisterPhoneOtpRequest, CIBOISDKVerifyRegisterPhoneOtpRequestCompanion, CIBOISDKVerifyRegisterPhoneOtpResponse, CIBOISDKVerifyRegisterPhoneOtpResponseCompanion, CIBOISDKVerifyRegisterPhoneUserDto, CIBOISDKVerifyRegisterPhoneUserDtoCompanion, UIViewController;
+@class CIBOISDKAppleCredentials, CIBOISDKAppleCredentialsCompanion, CIBOISDKAppleLoginRequest, CIBOISDKAppleLoginRequestCompanion, CIBOISDKAuthTokens, CIBOISDKAuthTokensCompanion, CIBOISDKCIBError, CIBOISDKCIBErrorCompanion, CIBOISDKCIBHttpClient, CIBOISDKCIBOneIdConfig, CIBOISDKCIBResult<__covariant T>, CIBOISDKCIBResultFailure, CIBOISDKCIBResultSuccess<__covariant T>, CIBOISDKCibMallLoginRequest, CIBOISDKCibMallLoginRequestCompanion, CIBOISDKDeleteAccountResponse, CIBOISDKDeleteAccountResponseCompanion, CIBOISDKFacebookLoginRequest, CIBOISDKFacebookLoginRequestCompanion, CIBOISDKFacebookLoginRequestSerializer, CIBOISDKGoogleCredentials, CIBOISDKGoogleCredentialsCompanion, CIBOISDKGoogleLoginRequest, CIBOISDKGoogleLoginRequestCompanion, CIBOISDKGoogleLoginRequestSerializer, CIBOISDKJwtUtils, CIBOISDKKotlinAbstractCoroutineContextElement, CIBOISDKKotlinAbstractCoroutineContextKey<B, E>, CIBOISDKKotlinArray<T>, CIBOISDKKotlinByteArray, CIBOISDKKotlinByteIterator, CIBOISDKKotlinCancellationException, CIBOISDKKotlinEnum<E>, CIBOISDKKotlinEnumCompanion, CIBOISDKKotlinException, CIBOISDKKotlinIllegalStateException, CIBOISDKKotlinKTypeProjection, CIBOISDKKotlinKTypeProjectionCompanion, CIBOISDKKotlinKVariance, CIBOISDKKotlinNothing, CIBOISDKKotlinRuntimeException, CIBOISDKKotlinThrowable, CIBOISDKKotlinUnit, CIBOISDKKotlinx_coroutines_coreCoroutineDispatcher, CIBOISDKKotlinx_coroutines_coreCoroutineDispatcherKey, CIBOISDKKotlinx_io_coreBuffer, CIBOISDKKotlinx_serialization_coreSerialKind, CIBOISDKKotlinx_serialization_coreSerializersModule, CIBOISDKKotlinx_serialization_jsonClassDiscriminatorMode, CIBOISDKKotlinx_serialization_jsonJson, CIBOISDKKotlinx_serialization_jsonJsonConfiguration, CIBOISDKKotlinx_serialization_jsonJsonDefault, CIBOISDKKotlinx_serialization_jsonJsonElement, CIBOISDKKotlinx_serialization_jsonJsonElementCompanion, CIBOISDKKtor_client_coreHttpClient, CIBOISDKKtor_client_coreHttpClientCall, CIBOISDKKtor_client_coreHttpClientCallCompanion, CIBOISDKKtor_client_coreHttpClientConfig<T>, CIBOISDKKtor_client_coreHttpClientEngineConfig, CIBOISDKKtor_client_coreHttpReceivePipeline, CIBOISDKKtor_client_coreHttpReceivePipelinePhases, CIBOISDKKtor_client_coreHttpRequestBuilder, CIBOISDKKtor_client_coreHttpRequestBuilderCompanion, CIBOISDKKtor_client_coreHttpRequestData, CIBOISDKKtor_client_coreHttpRequestPipeline, CIBOISDKKtor_client_coreHttpRequestPipelinePhases, CIBOISDKKtor_client_coreHttpResponse, CIBOISDKKtor_client_coreHttpResponseContainer, CIBOISDKKtor_client_coreHttpResponseData, CIBOISDKKtor_client_coreHttpResponsePipeline, CIBOISDKKtor_client_coreHttpResponsePipelinePhases, CIBOISDKKtor_client_coreHttpSendPipeline, CIBOISDKKtor_client_coreHttpSendPipelinePhases, CIBOISDKKtor_client_coreProxyConfig, CIBOISDKKtor_eventsEventDefinition<T>, CIBOISDKKtor_eventsEvents, CIBOISDKKtor_httpContentType, CIBOISDKKtor_httpContentTypeCompanion, CIBOISDKKtor_httpHeaderValueParam, CIBOISDKKtor_httpHeaderValueWithParameters, CIBOISDKKtor_httpHeaderValueWithParametersCompanion, CIBOISDKKtor_httpHeadersBuilder, CIBOISDKKtor_httpHttpMethod, CIBOISDKKtor_httpHttpMethodCompanion, CIBOISDKKtor_httpHttpProtocolVersion, CIBOISDKKtor_httpHttpProtocolVersionCompanion, CIBOISDKKtor_httpHttpStatusCode, CIBOISDKKtor_httpHttpStatusCodeCompanion, CIBOISDKKtor_httpOutgoingContent, CIBOISDKKtor_httpURLBuilder, CIBOISDKKtor_httpURLBuilderCompanion, CIBOISDKKtor_httpURLProtocol, CIBOISDKKtor_httpURLProtocolCompanion, CIBOISDKKtor_httpUrl, CIBOISDKKtor_httpUrlCompanion, CIBOISDKKtor_utilsAttributeKey<T>, CIBOISDKKtor_utilsGMTDate, CIBOISDKKtor_utilsGMTDateCompanion, CIBOISDKKtor_utilsMonth, CIBOISDKKtor_utilsMonthCompanion, CIBOISDKKtor_utilsPipeline<TSubject, TContext>, CIBOISDKKtor_utilsPipelinePhase, CIBOISDKKtor_utilsStringValuesBuilderImpl, CIBOISDKKtor_utilsTypeInfo, CIBOISDKKtor_utilsWeekDay, CIBOISDKKtor_utilsWeekDayCompanion, CIBOISDKLocalLoginRequest, CIBOISDKLocalLoginRequestCompanion, CIBOISDKLoginEmailRequest, CIBOISDKLoginEmailRequestCompanion, CIBOISDKLoginEmailResponse, CIBOISDKLoginEmailResponseCompanion, CIBOISDKLoginEmailUserDto, CIBOISDKLoginEmailUserDtoCompanion, CIBOISDKLoginFacebookResponse, CIBOISDKLoginFacebookResponseCompanion, CIBOISDKLoginFacebookUserDto, CIBOISDKLoginFacebookUserDtoCompanion, CIBOISDKLoginGoogleResponse, CIBOISDKLoginGoogleResponseCompanion, CIBOISDKLoginGoogleUserDto, CIBOISDKLoginGoogleUserDtoCompanion, CIBOISDKLoginPhoneOtpRequest, CIBOISDKLoginPhoneOtpRequestCompanion, CIBOISDKLoginPhoneOtpResponse, CIBOISDKLoginPhoneOtpResponseCompanion, CIBOISDKLogoutResponse, CIBOISDKLogoutResponseCompanion, CIBOISDKNativeSocialAuthBridge, CIBOISDKPlatformTokenStoreCompanion, CIBOISDKRefreshTokenClientRequest, CIBOISDKRefreshTokenClientRequestCompanion, CIBOISDKRefreshTokenResponse, CIBOISDKRefreshTokenResponseCompanion, CIBOISDKRefreshTokenUserDto, CIBOISDKRefreshTokenUserDtoCompanion, CIBOISDKRegisterEmailRequest, CIBOISDKRegisterEmailRequestCompanion, CIBOISDKRegisterEmailResponse, CIBOISDKRegisterEmailResponseCompanion, CIBOISDKRegisterPhoneOtpRequest, CIBOISDKRegisterPhoneOtpRequestCompanion, CIBOISDKRegisterPhoneOtpResponse, CIBOISDKRegisterPhoneOtpResponseCompanion, CIBOISDKRegisterTenantUserRequest, CIBOISDKRegisterTenantUserRequestCompanion, CIBOISDKRequestPhoneLoginOtpDto, CIBOISDKRequestPhoneLoginOtpDtoCompanion, CIBOISDKRequestPhoneOtpDto, CIBOISDKRequestPhoneOtpDtoCompanion, CIBOISDKRestoreAccountRequest, CIBOISDKRestoreAccountRequestCompanion, CIBOISDKRestoreAccountResponse, CIBOISDKRestoreAccountResponseCompanion, CIBOISDKRestoreAccountUserDto, CIBOISDKRestoreAccountUserDtoCompanion, CIBOISDKSocialAuthLauncher, CIBOISDKTenantUserDto, CIBOISDKTenantUserDtoCompanion, CIBOISDKTokenCoordinator, CIBOISDKUnifiedAuthRequest, CIBOISDKUnifiedAuthRequestCompanion, CIBOISDKUpdateTenantUserProfileRequest, CIBOISDKUpdateTenantUserProfileRequestCompanion, CIBOISDKVerifyLoginPhoneOtpRequest, CIBOISDKVerifyLoginPhoneOtpRequestCompanion, CIBOISDKVerifyLoginPhoneOtpResponse, CIBOISDKVerifyLoginPhoneOtpResponseCompanion, CIBOISDKVerifyLoginPhoneUserDto, CIBOISDKVerifyLoginPhoneUserDtoCompanion, CIBOISDKVerifyPhoneLoginOtpDto, CIBOISDKVerifyPhoneLoginOtpDtoCompanion, CIBOISDKVerifyPhoneOtpDto, CIBOISDKVerifyPhoneOtpDtoCompanion, CIBOISDKVerifyRegisterPhoneOtpRequest, CIBOISDKVerifyRegisterPhoneOtpRequestCompanion, CIBOISDKVerifyRegisterPhoneOtpResponse, CIBOISDKVerifyRegisterPhoneOtpResponseCompanion, CIBOISDKVerifyRegisterPhoneUserDto, CIBOISDKVerifyRegisterPhoneUserDtoCompanion, UIViewController;
 
 @protocol CIBOISDKKotlinAnnotation, CIBOISDKKotlinAutoCloseable, CIBOISDKKotlinComparable, CIBOISDKKotlinContinuation, CIBOISDKKotlinContinuationInterceptor, CIBOISDKKotlinCoroutineContext, CIBOISDKKotlinCoroutineContextElement, CIBOISDKKotlinCoroutineContextKey, CIBOISDKKotlinFunction, CIBOISDKKotlinIterator, CIBOISDKKotlinKAnnotatedElement, CIBOISDKKotlinKClass, CIBOISDKKotlinKClassifier, CIBOISDKKotlinKDeclarationContainer, CIBOISDKKotlinKType, CIBOISDKKotlinMapEntry, CIBOISDKKotlinSequence, CIBOISDKKotlinSuspendFunction2, CIBOISDKKotlinx_coroutines_coreChildHandle, CIBOISDKKotlinx_coroutines_coreChildJob, CIBOISDKKotlinx_coroutines_coreCoroutineScope, CIBOISDKKotlinx_coroutines_coreDisposableHandle, CIBOISDKKotlinx_coroutines_coreJob, CIBOISDKKotlinx_coroutines_coreParentJob, CIBOISDKKotlinx_coroutines_coreRunnable, CIBOISDKKotlinx_coroutines_coreSelectClause, CIBOISDKKotlinx_coroutines_coreSelectClause0, CIBOISDKKotlinx_coroutines_coreSelectInstance, CIBOISDKKotlinx_io_coreRawSink, CIBOISDKKotlinx_io_coreRawSource, CIBOISDKKotlinx_io_coreSink, CIBOISDKKotlinx_io_coreSource, CIBOISDKKotlinx_serialization_coreCompositeDecoder, CIBOISDKKotlinx_serialization_coreCompositeEncoder, CIBOISDKKotlinx_serialization_coreDecoder, CIBOISDKKotlinx_serialization_coreDeserializationStrategy, CIBOISDKKotlinx_serialization_coreEncoder, CIBOISDKKotlinx_serialization_coreKSerializer, CIBOISDKKotlinx_serialization_coreSerialDescriptor, CIBOISDKKotlinx_serialization_coreSerialFormat, CIBOISDKKotlinx_serialization_coreSerializationStrategy, CIBOISDKKotlinx_serialization_coreSerializersModuleCollector, CIBOISDKKotlinx_serialization_coreStringFormat, CIBOISDKKotlinx_serialization_jsonJsonNamingStrategy, CIBOISDKKtor_client_coreHttpClientEngine, CIBOISDKKtor_client_coreHttpClientEngineCapability, CIBOISDKKtor_client_coreHttpClientPlugin, CIBOISDKKtor_client_coreHttpRequest, CIBOISDKKtor_httpHeaders, CIBOISDKKtor_httpHttpMessage, CIBOISDKKtor_httpHttpMessageBuilder, CIBOISDKKtor_httpParameters, CIBOISDKKtor_httpParametersBuilder, CIBOISDKKtor_ioByteReadChannel, CIBOISDKKtor_ioCloseable, CIBOISDKKtor_utilsAttributes, CIBOISDKKtor_utilsStringValues, CIBOISDKKtor_utilsStringValuesBuilder, CIBOISDKTokenStore;
 
@@ -172,6 +172,42 @@ __attribute__((swift_name("CIBOneIdClient")))
  * Other uncaught Kotlin exceptions are fatal.
 */
 - (void)loginWithEmailEmail:(NSString *)email password:(NSString *)password clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginEmailResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithEmail(email:password:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)loginWithFacebookRequest:(CIBOISDKFacebookLoginRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginFacebookResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)loginWithFacebookAccessToken:(NSString *)accessToken clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginFacebookResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(accessToken:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)loginWithFacebookLauncher:(CIBOISDKSocialAuthLauncher *)launcher permissions:(NSArray<NSString *> *)permissions clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginFacebookResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithFacebook(launcher:permissions:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)loginWithGoogleRequest:(CIBOISDKGoogleLoginRequest *)request clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginGoogleResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithGoogle(request:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)loginWithGoogleLauncher:(CIBOISDKSocialAuthLauncher *)launcher serverClientId:(NSString * _Nullable)serverClientId clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginGoogleResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithGoogle(launcher:serverClientId:clientId:clientSecret:appId:tenantId:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)loginWithGoogleIdToken:(NSString * _Nullable)idToken authCode:(NSString * _Nullable)authCode clientId:(NSString * _Nullable)clientId clientSecret:(NSString * _Nullable)clientSecret appId:(NSString * _Nullable)appId tenantId:(NSString *)tenantId completionHandler:(void (^)(CIBOISDKCIBResult<CIBOISDKLoginGoogleResponse *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("loginWithGoogle(idToken:authCode:clientId:clientSecret:appId:tenantId:completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
@@ -560,29 +596,18 @@ __attribute__((swift_name("DeleteAccountResponse.Companion")))
 
 /**
  * @note annotations
- *   kotlinx.serialization.Serializable
+ *   kotlinx.serialization.Serializable(with=NormalClass(value=com/cib/oneid/sdk/models/FacebookLoginRequestSerializer))
 */
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("FacebookLoginRequest")))
 @interface CIBOISDKFacebookLoginRequest : CIBOISDKBase
-- (instancetype)initWithAccessToken:(NSString *)accessToken appId:(NSString * _Nullable)appId __attribute__((swift_name("init(accessToken:appId:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithAccessToken:(NSString *)accessToken __attribute__((swift_name("init(accessToken:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) CIBOISDKFacebookLoginRequestCompanion *companion __attribute__((swift_name("companion")));
-- (CIBOISDKFacebookLoginRequest *)doCopyAccessToken:(NSString *)accessToken appId:(NSString * _Nullable)appId __attribute__((swift_name("doCopy(accessToken:appId:)")));
+- (CIBOISDKFacebookLoginRequest *)doCopyAccessToken:(NSString *)accessToken __attribute__((swift_name("doCopy(accessToken:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.SerialName(value="accessToken")
-*/
 @property (readonly) NSString *accessToken __attribute__((swift_name("accessToken")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.SerialName(value="appId")
-*/
-@property (readonly) NSString * _Nullable appId __attribute__((swift_name("appId")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -593,6 +618,37 @@ __attribute__((swift_name("FacebookLoginRequest.Companion")))
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) CIBOISDKFacebookLoginRequestCompanion *shared __attribute__((swift_name("shared")));
 - (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+__attribute__((swift_name("Kotlinx_serialization_coreSerializationStrategy")))
+@protocol CIBOISDKKotlinx_serialization_coreSerializationStrategy
+@required
+- (void)serializeEncoder:(id<CIBOISDKKotlinx_serialization_coreEncoder>)encoder value:(id _Nullable)value __attribute__((swift_name("serialize(encoder:value:)")));
+@property (readonly) id<CIBOISDKKotlinx_serialization_coreSerialDescriptor> descriptor __attribute__((swift_name("descriptor")));
+@end
+
+__attribute__((swift_name("Kotlinx_serialization_coreDeserializationStrategy")))
+@protocol CIBOISDKKotlinx_serialization_coreDeserializationStrategy
+@required
+- (id _Nullable)deserializeDecoder:(id<CIBOISDKKotlinx_serialization_coreDecoder>)decoder __attribute__((swift_name("deserialize(decoder:)")));
+@property (readonly) id<CIBOISDKKotlinx_serialization_coreSerialDescriptor> descriptor __attribute__((swift_name("descriptor")));
+@end
+
+__attribute__((swift_name("Kotlinx_serialization_coreKSerializer")))
+@protocol CIBOISDKKotlinx_serialization_coreKSerializer <CIBOISDKKotlinx_serialization_coreSerializationStrategy, CIBOISDKKotlinx_serialization_coreDeserializationStrategy>
+@required
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("FacebookLoginRequestSerializer")))
+@interface CIBOISDKFacebookLoginRequestSerializer : CIBOISDKBase <CIBOISDKKotlinx_serialization_coreKSerializer>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)facebookLoginRequestSerializer __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) CIBOISDKFacebookLoginRequestSerializer *shared __attribute__((swift_name("shared")));
+- (CIBOISDKFacebookLoginRequest *)deserializeDecoder:(id<CIBOISDKKotlinx_serialization_coreDecoder>)decoder __attribute__((swift_name("deserialize(decoder:)")));
+- (void)serializeEncoder:(id<CIBOISDKKotlinx_serialization_coreEncoder>)encoder value:(CIBOISDKFacebookLoginRequest *)value __attribute__((swift_name("serialize(encoder:value:)")));
+@property (readonly) id<CIBOISDKKotlinx_serialization_coreSerialDescriptor> descriptor __attribute__((swift_name("descriptor")));
 @end
 
 
@@ -636,34 +692,18 @@ __attribute__((swift_name("GoogleCredentials.Companion")))
 
 /**
  * @note annotations
- *   kotlinx.serialization.Serializable
+ *   kotlinx.serialization.Serializable(with=NormalClass(value=com/cib/oneid/sdk/models/GoogleLoginRequestSerializer))
 */
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GoogleLoginRequest")))
 @interface CIBOISDKGoogleLoginRequest : CIBOISDKBase
-- (instancetype)initWithIdToken:(NSString * _Nullable)idToken authCode:(NSString * _Nullable)authCode appId:(NSString * _Nullable)appId __attribute__((swift_name("init(idToken:authCode:appId:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithIdToken:(NSString * _Nullable)idToken authCode:(NSString * _Nullable)authCode __attribute__((swift_name("init(idToken:authCode:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) CIBOISDKGoogleLoginRequestCompanion *companion __attribute__((swift_name("companion")));
-- (CIBOISDKGoogleLoginRequest *)doCopyIdToken:(NSString * _Nullable)idToken authCode:(NSString * _Nullable)authCode appId:(NSString * _Nullable)appId __attribute__((swift_name("doCopy(idToken:authCode:appId:)")));
+- (CIBOISDKGoogleLoginRequest *)doCopyIdToken:(NSString * _Nullable)idToken authCode:(NSString * _Nullable)authCode __attribute__((swift_name("doCopy(idToken:authCode:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.SerialName(value="appId")
-*/
-@property (readonly) NSString * _Nullable appId __attribute__((swift_name("appId")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.SerialName(value="authCode")
-*/
 @property (readonly) NSString * _Nullable authCode __attribute__((swift_name("authCode")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.SerialName(value="idToken")
-*/
 @property (readonly) NSString * _Nullable idToken __attribute__((swift_name("idToken")));
 @end
 
@@ -675,6 +715,18 @@ __attribute__((swift_name("GoogleLoginRequest.Companion")))
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) CIBOISDKGoogleLoginRequestCompanion *shared __attribute__((swift_name("shared")));
 - (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("GoogleLoginRequestSerializer")))
+@interface CIBOISDKGoogleLoginRequestSerializer : CIBOISDKBase <CIBOISDKKotlinx_serialization_coreKSerializer>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)googleLoginRequestSerializer __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) CIBOISDKGoogleLoginRequestSerializer *shared __attribute__((swift_name("shared")));
+- (CIBOISDKGoogleLoginRequest *)deserializeDecoder:(id<CIBOISDKKotlinx_serialization_coreDecoder>)decoder __attribute__((swift_name("deserialize(decoder:)")));
+- (void)serializeEncoder:(id<CIBOISDKKotlinx_serialization_coreEncoder>)encoder value:(CIBOISDKGoogleLoginRequest *)value __attribute__((swift_name("serialize(encoder:value:)")));
+@property (readonly) id<CIBOISDKKotlinx_serialization_coreSerialDescriptor> descriptor __attribute__((swift_name("descriptor")));
 @end
 
 
@@ -862,6 +914,290 @@ __attribute__((swift_name("LoginEmailUserDto.Companion")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) CIBOISDKLoginEmailUserDtoCompanion *shared __attribute__((swift_name("shared")));
+- (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("LoginFacebookResponse")))
+@interface CIBOISDKLoginFacebookResponse : CIBOISDKBase
+- (instancetype)initWithStatus:(NSString * _Nullable)status message:(NSString * _Nullable)message tokenType:(NSString * _Nullable)tokenType accessToken:(NSString * _Nullable)accessToken expiresIn:(CIBOISDKLong * _Nullable)expiresIn refreshToken:(NSString * _Nullable)refreshToken tokens:(CIBOISDKAuthTokens * _Nullable)tokens user:(CIBOISDKLoginFacebookUserDto * _Nullable)user __attribute__((swift_name("init(status:message:tokenType:accessToken:expiresIn:refreshToken:tokens:user:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) CIBOISDKLoginFacebookResponseCompanion *companion __attribute__((swift_name("companion")));
+- (CIBOISDKLoginFacebookResponse *)doCopyStatus:(NSString * _Nullable)status message:(NSString * _Nullable)message tokenType:(NSString * _Nullable)tokenType accessToken:(NSString * _Nullable)accessToken expiresIn:(CIBOISDKLong * _Nullable)expiresIn refreshToken:(NSString * _Nullable)refreshToken tokens:(CIBOISDKAuthTokens * _Nullable)tokens user:(CIBOISDKLoginFacebookUserDto * _Nullable)user __attribute__((swift_name("doCopy(status:message:tokenType:accessToken:expiresIn:refreshToken:tokens:user:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="access_token")
+*/
+@property (readonly) NSString * _Nullable accessToken __attribute__((swift_name("accessToken")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="expires_in")
+*/
+@property (readonly) CIBOISDKLong * _Nullable expiresIn __attribute__((swift_name("expiresIn")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="message")
+*/
+@property (readonly) NSString * _Nullable message __attribute__((swift_name("message")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="refresh_token")
+*/
+@property (readonly) NSString * _Nullable refreshToken __attribute__((swift_name("refreshToken")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="status")
+*/
+@property (readonly) NSString * _Nullable status __attribute__((swift_name("status")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="token_type")
+*/
+@property (readonly) NSString * _Nullable tokenType __attribute__((swift_name("tokenType")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="tokens")
+*/
+@property (readonly) CIBOISDKAuthTokens * _Nullable tokens __attribute__((swift_name("tokens")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="user")
+*/
+@property (readonly) CIBOISDKLoginFacebookUserDto * _Nullable user __attribute__((swift_name("user")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("LoginFacebookResponse.Companion")))
+@interface CIBOISDKLoginFacebookResponseCompanion : CIBOISDKBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) CIBOISDKLoginFacebookResponseCompanion *shared __attribute__((swift_name("shared")));
+- (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("LoginFacebookUserDto")))
+@interface CIBOISDKLoginFacebookUserDto : CIBOISDKBase
+- (instancetype)initWithId:(NSString * _Nullable)id userName:(NSString * _Nullable)userName email:(NSString * _Nullable)email phoneNumber:(NSString * _Nullable)phoneNumber firstName:(NSString * _Nullable)firstName lastName:(NSString * _Nullable)lastName extraFields:(NSDictionary<NSString *, NSString *> * _Nullable)extraFields __attribute__((swift_name("init(id:userName:email:phoneNumber:firstName:lastName:extraFields:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) CIBOISDKLoginFacebookUserDtoCompanion *companion __attribute__((swift_name("companion")));
+- (CIBOISDKLoginFacebookUserDto *)doCopyId:(NSString * _Nullable)id userName:(NSString * _Nullable)userName email:(NSString * _Nullable)email phoneNumber:(NSString * _Nullable)phoneNumber firstName:(NSString * _Nullable)firstName lastName:(NSString * _Nullable)lastName extraFields:(NSDictionary<NSString *, NSString *> * _Nullable)extraFields __attribute__((swift_name("doCopy(id:userName:email:phoneNumber:firstName:lastName:extraFields:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="email")
+*/
+@property (readonly) NSString * _Nullable email __attribute__((swift_name("email")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="extraFields")
+*/
+@property (readonly) NSDictionary<NSString *, NSString *> * _Nullable extraFields __attribute__((swift_name("extraFields")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="firstName")
+*/
+@property (readonly) NSString * _Nullable firstName __attribute__((swift_name("firstName")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="id")
+*/
+@property (readonly) NSString * _Nullable id __attribute__((swift_name("id")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="lastName")
+*/
+@property (readonly) NSString * _Nullable lastName __attribute__((swift_name("lastName")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="phoneNumber")
+*/
+@property (readonly) NSString * _Nullable phoneNumber __attribute__((swift_name("phoneNumber")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="userName")
+*/
+@property (readonly) NSString * _Nullable userName __attribute__((swift_name("userName")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("LoginFacebookUserDto.Companion")))
+@interface CIBOISDKLoginFacebookUserDtoCompanion : CIBOISDKBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) CIBOISDKLoginFacebookUserDtoCompanion *shared __attribute__((swift_name("shared")));
+- (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("LoginGoogleResponse")))
+@interface CIBOISDKLoginGoogleResponse : CIBOISDKBase
+- (instancetype)initWithStatus:(NSString * _Nullable)status message:(NSString * _Nullable)message tokenType:(NSString * _Nullable)tokenType accessToken:(NSString * _Nullable)accessToken expiresIn:(CIBOISDKLong * _Nullable)expiresIn refreshToken:(NSString * _Nullable)refreshToken tokens:(CIBOISDKAuthTokens * _Nullable)tokens user:(CIBOISDKLoginGoogleUserDto * _Nullable)user __attribute__((swift_name("init(status:message:tokenType:accessToken:expiresIn:refreshToken:tokens:user:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) CIBOISDKLoginGoogleResponseCompanion *companion __attribute__((swift_name("companion")));
+- (CIBOISDKLoginGoogleResponse *)doCopyStatus:(NSString * _Nullable)status message:(NSString * _Nullable)message tokenType:(NSString * _Nullable)tokenType accessToken:(NSString * _Nullable)accessToken expiresIn:(CIBOISDKLong * _Nullable)expiresIn refreshToken:(NSString * _Nullable)refreshToken tokens:(CIBOISDKAuthTokens * _Nullable)tokens user:(CIBOISDKLoginGoogleUserDto * _Nullable)user __attribute__((swift_name("doCopy(status:message:tokenType:accessToken:expiresIn:refreshToken:tokens:user:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="access_token")
+*/
+@property (readonly) NSString * _Nullable accessToken __attribute__((swift_name("accessToken")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="expires_in")
+*/
+@property (readonly) CIBOISDKLong * _Nullable expiresIn __attribute__((swift_name("expiresIn")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="message")
+*/
+@property (readonly) NSString * _Nullable message __attribute__((swift_name("message")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="refresh_token")
+*/
+@property (readonly) NSString * _Nullable refreshToken __attribute__((swift_name("refreshToken")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="status")
+*/
+@property (readonly) NSString * _Nullable status __attribute__((swift_name("status")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="token_type")
+*/
+@property (readonly) NSString * _Nullable tokenType __attribute__((swift_name("tokenType")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="tokens")
+*/
+@property (readonly) CIBOISDKAuthTokens * _Nullable tokens __attribute__((swift_name("tokens")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="user")
+*/
+@property (readonly) CIBOISDKLoginGoogleUserDto * _Nullable user __attribute__((swift_name("user")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("LoginGoogleResponse.Companion")))
+@interface CIBOISDKLoginGoogleResponseCompanion : CIBOISDKBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) CIBOISDKLoginGoogleResponseCompanion *shared __attribute__((swift_name("shared")));
+- (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("LoginGoogleUserDto")))
+@interface CIBOISDKLoginGoogleUserDto : CIBOISDKBase
+- (instancetype)initWithId:(NSString * _Nullable)id userName:(NSString * _Nullable)userName email:(NSString * _Nullable)email phoneNumber:(NSString * _Nullable)phoneNumber firstName:(NSString * _Nullable)firstName lastName:(NSString * _Nullable)lastName extraFields:(NSDictionary<NSString *, NSString *> * _Nullable)extraFields __attribute__((swift_name("init(id:userName:email:phoneNumber:firstName:lastName:extraFields:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) CIBOISDKLoginGoogleUserDtoCompanion *companion __attribute__((swift_name("companion")));
+- (CIBOISDKLoginGoogleUserDto *)doCopyId:(NSString * _Nullable)id userName:(NSString * _Nullable)userName email:(NSString * _Nullable)email phoneNumber:(NSString * _Nullable)phoneNumber firstName:(NSString * _Nullable)firstName lastName:(NSString * _Nullable)lastName extraFields:(NSDictionary<NSString *, NSString *> * _Nullable)extraFields __attribute__((swift_name("doCopy(id:userName:email:phoneNumber:firstName:lastName:extraFields:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="email")
+*/
+@property (readonly) NSString * _Nullable email __attribute__((swift_name("email")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="extraFields")
+*/
+@property (readonly) NSDictionary<NSString *, NSString *> * _Nullable extraFields __attribute__((swift_name("extraFields")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="firstName")
+*/
+@property (readonly) NSString * _Nullable firstName __attribute__((swift_name("firstName")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="id")
+*/
+@property (readonly) NSString * _Nullable id __attribute__((swift_name("id")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="lastName")
+*/
+@property (readonly) NSString * _Nullable lastName __attribute__((swift_name("lastName")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="phoneNumber")
+*/
+@property (readonly) NSString * _Nullable phoneNumber __attribute__((swift_name("phoneNumber")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="userName")
+*/
+@property (readonly) NSString * _Nullable userName __attribute__((swift_name("userName")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("LoginGoogleUserDto.Companion")))
+@interface CIBOISDKLoginGoogleUserDtoCompanion : CIBOISDKBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) CIBOISDKLoginGoogleUserDtoCompanion *shared __attribute__((swift_name("shared")));
 - (id<CIBOISDKKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
@@ -2401,28 +2737,100 @@ __attribute__((swift_name("KotlinCancellationException")))
 - (instancetype)initWithMessage:(NSString * _Nullable)message cause:(CIBOISDKKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
 @end
 
-__attribute__((swift_name("Kotlinx_serialization_coreSerializationStrategy")))
-@protocol CIBOISDKKotlinx_serialization_coreSerializationStrategy
-@required
-- (void)serializeEncoder:(id<CIBOISDKKotlinx_serialization_coreEncoder>)encoder value:(id _Nullable)value __attribute__((swift_name("serialize(encoder:value:)")));
-@property (readonly) id<CIBOISDKKotlinx_serialization_coreSerialDescriptor> descriptor __attribute__((swift_name("descriptor")));
-@end
-
-__attribute__((swift_name("Kotlinx_serialization_coreDeserializationStrategy")))
-@protocol CIBOISDKKotlinx_serialization_coreDeserializationStrategy
-@required
-- (id _Nullable)deserializeDecoder:(id<CIBOISDKKotlinx_serialization_coreDecoder>)decoder __attribute__((swift_name("deserialize(decoder:)")));
-@property (readonly) id<CIBOISDKKotlinx_serialization_coreSerialDescriptor> descriptor __attribute__((swift_name("descriptor")));
-@end
-
-__attribute__((swift_name("Kotlinx_serialization_coreKSerializer")))
-@protocol CIBOISDKKotlinx_serialization_coreKSerializer <CIBOISDKKotlinx_serialization_coreSerializationStrategy, CIBOISDKKotlinx_serialization_coreDeserializationStrategy>
-@required
-@end
-
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinNothing")))
 @interface CIBOISDKKotlinNothing : CIBOISDKBase
+@end
+
+__attribute__((swift_name("Kotlinx_serialization_coreEncoder")))
+@protocol CIBOISDKKotlinx_serialization_coreEncoder
+@required
+- (id<CIBOISDKKotlinx_serialization_coreCompositeEncoder>)beginCollectionDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor collectionSize:(int32_t)collectionSize __attribute__((swift_name("beginCollection(descriptor:collectionSize:)")));
+- (id<CIBOISDKKotlinx_serialization_coreCompositeEncoder>)beginStructureDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("beginStructure(descriptor:)")));
+- (void)encodeBooleanValue:(BOOL)value __attribute__((swift_name("encodeBoolean(value:)")));
+- (void)encodeByteValue:(int8_t)value __attribute__((swift_name("encodeByte(value:)")));
+- (void)encodeCharValue:(unichar)value __attribute__((swift_name("encodeChar(value:)")));
+- (void)encodeDoubleValue:(double)value __attribute__((swift_name("encodeDouble(value:)")));
+- (void)encodeEnumEnumDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)enumDescriptor index:(int32_t)index __attribute__((swift_name("encodeEnum(enumDescriptor:index:)")));
+- (void)encodeFloatValue:(float)value __attribute__((swift_name("encodeFloat(value:)")));
+- (id<CIBOISDKKotlinx_serialization_coreEncoder>)encodeInlineDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("encodeInline(descriptor:)")));
+- (void)encodeIntValue:(int32_t)value __attribute__((swift_name("encodeInt(value:)")));
+- (void)encodeLongValue:(int64_t)value __attribute__((swift_name("encodeLong(value:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+- (void)encodeNotNullMark __attribute__((swift_name("encodeNotNullMark()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+- (void)encodeNull __attribute__((swift_name("encodeNull()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+- (void)encodeNullableSerializableValueSerializer:(id<CIBOISDKKotlinx_serialization_coreSerializationStrategy>)serializer value:(id _Nullable)value __attribute__((swift_name("encodeNullableSerializableValue(serializer:value:)")));
+- (void)encodeSerializableValueSerializer:(id<CIBOISDKKotlinx_serialization_coreSerializationStrategy>)serializer value:(id _Nullable)value __attribute__((swift_name("encodeSerializableValue(serializer:value:)")));
+- (void)encodeShortValue:(int16_t)value __attribute__((swift_name("encodeShort(value:)")));
+- (void)encodeStringValue:(NSString *)value __attribute__((swift_name("encodeString(value:)")));
+@property (readonly) CIBOISDKKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
+@end
+
+__attribute__((swift_name("Kotlinx_serialization_coreSerialDescriptor")))
+@protocol CIBOISDKKotlinx_serialization_coreSerialDescriptor
+@required
+- (NSArray<id<CIBOISDKKotlinAnnotation>> *)getElementAnnotationsIndex:(int32_t)index __attribute__((swift_name("getElementAnnotations(index:)")));
+- (id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)getElementDescriptorIndex:(int32_t)index __attribute__((swift_name("getElementDescriptor(index:)")));
+- (int32_t)getElementIndexName:(NSString *)name __attribute__((swift_name("getElementIndex(name:)")));
+- (NSString *)getElementNameIndex:(int32_t)index __attribute__((swift_name("getElementName(index:)")));
+- (BOOL)isElementOptionalIndex:(int32_t)index __attribute__((swift_name("isElementOptional(index:)")));
+@property (readonly) NSArray<id<CIBOISDKKotlinAnnotation>> *annotations __attribute__((swift_name("annotations")));
+@property (readonly) int32_t elementsCount __attribute__((swift_name("elementsCount")));
+@property (readonly) BOOL isInline __attribute__((swift_name("isInline")));
+@property (readonly) BOOL isNullable __attribute__((swift_name("isNullable")));
+@property (readonly) CIBOISDKKotlinx_serialization_coreSerialKind *kind __attribute__((swift_name("kind")));
+@property (readonly) NSString *serialName __attribute__((swift_name("serialName")));
+@end
+
+__attribute__((swift_name("Kotlinx_serialization_coreDecoder")))
+@protocol CIBOISDKKotlinx_serialization_coreDecoder
+@required
+- (id<CIBOISDKKotlinx_serialization_coreCompositeDecoder>)beginStructureDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("beginStructure(descriptor:)")));
+- (BOOL)decodeBoolean __attribute__((swift_name("decodeBoolean()")));
+- (int8_t)decodeByte __attribute__((swift_name("decodeByte()")));
+- (unichar)decodeChar __attribute__((swift_name("decodeChar()")));
+- (double)decodeDouble __attribute__((swift_name("decodeDouble()")));
+- (int32_t)decodeEnumEnumDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)enumDescriptor __attribute__((swift_name("decodeEnum(enumDescriptor:)")));
+- (float)decodeFloat __attribute__((swift_name("decodeFloat()")));
+- (id<CIBOISDKKotlinx_serialization_coreDecoder>)decodeInlineDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("decodeInline(descriptor:)")));
+- (int32_t)decodeInt __attribute__((swift_name("decodeInt()")));
+- (int64_t)decodeLong __attribute__((swift_name("decodeLong()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+- (BOOL)decodeNotNullMark __attribute__((swift_name("decodeNotNullMark()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+- (CIBOISDKKotlinNothing * _Nullable)decodeNull __attribute__((swift_name("decodeNull()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+- (id _Nullable)decodeNullableSerializableValueDeserializer:(id<CIBOISDKKotlinx_serialization_coreDeserializationStrategy>)deserializer __attribute__((swift_name("decodeNullableSerializableValue(deserializer:)")));
+- (id _Nullable)decodeSerializableValueDeserializer:(id<CIBOISDKKotlinx_serialization_coreDeserializationStrategy>)deserializer __attribute__((swift_name("decodeSerializableValue(deserializer:)")));
+- (int16_t)decodeShort __attribute__((swift_name("decodeShort()")));
+- (NSString *)decodeString __attribute__((swift_name("decodeString()")));
+@property (readonly) CIBOISDKKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -2657,94 +3065,104 @@ __attribute__((swift_name("KotlinArray")))
 @property (readonly) int32_t size __attribute__((swift_name("size")));
 @end
 
-__attribute__((swift_name("Kotlinx_serialization_coreEncoder")))
-@protocol CIBOISDKKotlinx_serialization_coreEncoder
+__attribute__((swift_name("Kotlinx_serialization_coreCompositeEncoder")))
+@protocol CIBOISDKKotlinx_serialization_coreCompositeEncoder
 @required
-- (id<CIBOISDKKotlinx_serialization_coreCompositeEncoder>)beginCollectionDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor collectionSize:(int32_t)collectionSize __attribute__((swift_name("beginCollection(descriptor:collectionSize:)")));
-- (id<CIBOISDKKotlinx_serialization_coreCompositeEncoder>)beginStructureDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("beginStructure(descriptor:)")));
-- (void)encodeBooleanValue:(BOOL)value __attribute__((swift_name("encodeBoolean(value:)")));
-- (void)encodeByteValue:(int8_t)value __attribute__((swift_name("encodeByte(value:)")));
-- (void)encodeCharValue:(unichar)value __attribute__((swift_name("encodeChar(value:)")));
-- (void)encodeDoubleValue:(double)value __attribute__((swift_name("encodeDouble(value:)")));
-- (void)encodeEnumEnumDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)enumDescriptor index:(int32_t)index __attribute__((swift_name("encodeEnum(enumDescriptor:index:)")));
-- (void)encodeFloatValue:(float)value __attribute__((swift_name("encodeFloat(value:)")));
-- (id<CIBOISDKKotlinx_serialization_coreEncoder>)encodeInlineDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("encodeInline(descriptor:)")));
-- (void)encodeIntValue:(int32_t)value __attribute__((swift_name("encodeInt(value:)")));
-- (void)encodeLongValue:(int64_t)value __attribute__((swift_name("encodeLong(value:)")));
+- (void)encodeBooleanElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(BOOL)value __attribute__((swift_name("encodeBooleanElement(descriptor:index:value:)")));
+- (void)encodeByteElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(int8_t)value __attribute__((swift_name("encodeByteElement(descriptor:index:value:)")));
+- (void)encodeCharElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(unichar)value __attribute__((swift_name("encodeCharElement(descriptor:index:value:)")));
+- (void)encodeDoubleElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(double)value __attribute__((swift_name("encodeDoubleElement(descriptor:index:value:)")));
+- (void)encodeFloatElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(float)value __attribute__((swift_name("encodeFloatElement(descriptor:index:value:)")));
+- (id<CIBOISDKKotlinx_serialization_coreEncoder>)encodeInlineElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("encodeInlineElement(descriptor:index:)")));
+- (void)encodeIntElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(int32_t)value __attribute__((swift_name("encodeIntElement(descriptor:index:value:)")));
+- (void)encodeLongElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(int64_t)value __attribute__((swift_name("encodeLongElement(descriptor:index:value:)")));
 
 /**
  * @note annotations
  *   kotlinx.serialization.ExperimentalSerializationApi
 */
-- (void)encodeNotNullMark __attribute__((swift_name("encodeNotNullMark()")));
+- (void)encodeNullableSerializableElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index serializer:(id<CIBOISDKKotlinx_serialization_coreSerializationStrategy>)serializer value:(id _Nullable)value __attribute__((swift_name("encodeNullableSerializableElement(descriptor:index:serializer:value:)")));
+- (void)encodeSerializableElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index serializer:(id<CIBOISDKKotlinx_serialization_coreSerializationStrategy>)serializer value:(id _Nullable)value __attribute__((swift_name("encodeSerializableElement(descriptor:index:serializer:value:)")));
+- (void)encodeShortElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(int16_t)value __attribute__((swift_name("encodeShortElement(descriptor:index:value:)")));
+- (void)encodeStringElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(NSString *)value __attribute__((swift_name("encodeStringElement(descriptor:index:value:)")));
+- (void)endStructureDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("endStructure(descriptor:)")));
 
 /**
  * @note annotations
  *   kotlinx.serialization.ExperimentalSerializationApi
 */
-- (void)encodeNull __attribute__((swift_name("encodeNull()")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
-- (void)encodeNullableSerializableValueSerializer:(id<CIBOISDKKotlinx_serialization_coreSerializationStrategy>)serializer value:(id _Nullable)value __attribute__((swift_name("encodeNullableSerializableValue(serializer:value:)")));
-- (void)encodeSerializableValueSerializer:(id<CIBOISDKKotlinx_serialization_coreSerializationStrategy>)serializer value:(id _Nullable)value __attribute__((swift_name("encodeSerializableValue(serializer:value:)")));
-- (void)encodeShortValue:(int16_t)value __attribute__((swift_name("encodeShort(value:)")));
-- (void)encodeStringValue:(NSString *)value __attribute__((swift_name("encodeString(value:)")));
+- (BOOL)shouldEncodeElementDefaultDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("shouldEncodeElementDefault(descriptor:index:)")));
 @property (readonly) CIBOISDKKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
 @end
 
-__attribute__((swift_name("Kotlinx_serialization_coreSerialDescriptor")))
-@protocol CIBOISDKKotlinx_serialization_coreSerialDescriptor
-@required
-- (NSArray<id<CIBOISDKKotlinAnnotation>> *)getElementAnnotationsIndex:(int32_t)index __attribute__((swift_name("getElementAnnotations(index:)")));
-- (id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)getElementDescriptorIndex:(int32_t)index __attribute__((swift_name("getElementDescriptor(index:)")));
-- (int32_t)getElementIndexName:(NSString *)name __attribute__((swift_name("getElementIndex(name:)")));
-- (NSString *)getElementNameIndex:(int32_t)index __attribute__((swift_name("getElementName(index:)")));
-- (BOOL)isElementOptionalIndex:(int32_t)index __attribute__((swift_name("isElementOptional(index:)")));
-@property (readonly) NSArray<id<CIBOISDKKotlinAnnotation>> *annotations __attribute__((swift_name("annotations")));
-@property (readonly) int32_t elementsCount __attribute__((swift_name("elementsCount")));
-@property (readonly) BOOL isInline __attribute__((swift_name("isInline")));
-@property (readonly) BOOL isNullable __attribute__((swift_name("isNullable")));
-@property (readonly) CIBOISDKKotlinx_serialization_coreSerialKind *kind __attribute__((swift_name("kind")));
-@property (readonly) NSString *serialName __attribute__((swift_name("serialName")));
+__attribute__((swift_name("Kotlinx_serialization_coreSerializersModule")))
+@interface CIBOISDKKotlinx_serialization_coreSerializersModule : CIBOISDKBase
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+- (void)dumpToCollector:(id<CIBOISDKKotlinx_serialization_coreSerializersModuleCollector>)collector __attribute__((swift_name("dumpTo(collector:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+- (id<CIBOISDKKotlinx_serialization_coreKSerializer> _Nullable)getContextualKClass:(id<CIBOISDKKotlinKClass>)kClass typeArgumentsSerializers:(NSArray<id<CIBOISDKKotlinx_serialization_coreKSerializer>> *)typeArgumentsSerializers __attribute__((swift_name("getContextual(kClass:typeArgumentsSerializers:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+- (id<CIBOISDKKotlinx_serialization_coreSerializationStrategy> _Nullable)getPolymorphicBaseClass:(id<CIBOISDKKotlinKClass>)baseClass value:(id)value __attribute__((swift_name("getPolymorphic(baseClass:value:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+- (id<CIBOISDKKotlinx_serialization_coreDeserializationStrategy> _Nullable)getPolymorphicBaseClass:(id<CIBOISDKKotlinKClass>)baseClass serializedClassName:(NSString * _Nullable)serializedClassName __attribute__((swift_name("getPolymorphic(baseClass:serializedClassName:)")));
 @end
 
-__attribute__((swift_name("Kotlinx_serialization_coreDecoder")))
-@protocol CIBOISDKKotlinx_serialization_coreDecoder
+__attribute__((swift_name("KotlinAnnotation")))
+@protocol CIBOISDKKotlinAnnotation
 @required
-- (id<CIBOISDKKotlinx_serialization_coreCompositeDecoder>)beginStructureDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("beginStructure(descriptor:)")));
-- (BOOL)decodeBoolean __attribute__((swift_name("decodeBoolean()")));
-- (int8_t)decodeByte __attribute__((swift_name("decodeByte()")));
-- (unichar)decodeChar __attribute__((swift_name("decodeChar()")));
-- (double)decodeDouble __attribute__((swift_name("decodeDouble()")));
-- (int32_t)decodeEnumEnumDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)enumDescriptor __attribute__((swift_name("decodeEnum(enumDescriptor:)")));
-- (float)decodeFloat __attribute__((swift_name("decodeFloat()")));
-- (id<CIBOISDKKotlinx_serialization_coreDecoder>)decodeInlineDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("decodeInline(descriptor:)")));
-- (int32_t)decodeInt __attribute__((swift_name("decodeInt()")));
-- (int64_t)decodeLong __attribute__((swift_name("decodeLong()")));
+@end
+
+__attribute__((swift_name("Kotlinx_serialization_coreSerialKind")))
+@interface CIBOISDKKotlinx_serialization_coreSerialKind : CIBOISDKBase
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((swift_name("Kotlinx_serialization_coreCompositeDecoder")))
+@protocol CIBOISDKKotlinx_serialization_coreCompositeDecoder
+@required
+- (BOOL)decodeBooleanElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeBooleanElement(descriptor:index:)")));
+- (int8_t)decodeByteElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeByteElement(descriptor:index:)")));
+- (unichar)decodeCharElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeCharElement(descriptor:index:)")));
+- (int32_t)decodeCollectionSizeDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("decodeCollectionSize(descriptor:)")));
+- (double)decodeDoubleElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeDoubleElement(descriptor:index:)")));
+- (int32_t)decodeElementIndexDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("decodeElementIndex(descriptor:)")));
+- (float)decodeFloatElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeFloatElement(descriptor:index:)")));
+- (id<CIBOISDKKotlinx_serialization_coreDecoder>)decodeInlineElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeInlineElement(descriptor:index:)")));
+- (int32_t)decodeIntElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeIntElement(descriptor:index:)")));
+- (int64_t)decodeLongElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeLongElement(descriptor:index:)")));
 
 /**
  * @note annotations
  *   kotlinx.serialization.ExperimentalSerializationApi
 */
-- (BOOL)decodeNotNullMark __attribute__((swift_name("decodeNotNullMark()")));
+- (id _Nullable)decodeNullableSerializableElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index deserializer:(id<CIBOISDKKotlinx_serialization_coreDeserializationStrategy>)deserializer previousValue:(id _Nullable)previousValue __attribute__((swift_name("decodeNullableSerializableElement(descriptor:index:deserializer:previousValue:)")));
 
 /**
  * @note annotations
  *   kotlinx.serialization.ExperimentalSerializationApi
 */
-- (CIBOISDKKotlinNothing * _Nullable)decodeNull __attribute__((swift_name("decodeNull()")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
-- (id _Nullable)decodeNullableSerializableValueDeserializer:(id<CIBOISDKKotlinx_serialization_coreDeserializationStrategy>)deserializer __attribute__((swift_name("decodeNullableSerializableValue(deserializer:)")));
-- (id _Nullable)decodeSerializableValueDeserializer:(id<CIBOISDKKotlinx_serialization_coreDeserializationStrategy>)deserializer __attribute__((swift_name("decodeSerializableValue(deserializer:)")));
-- (int16_t)decodeShort __attribute__((swift_name("decodeShort()")));
-- (NSString *)decodeString __attribute__((swift_name("decodeString()")));
+- (BOOL)decodeSequentially __attribute__((swift_name("decodeSequentially()")));
+- (id _Nullable)decodeSerializableElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index deserializer:(id<CIBOISDKKotlinx_serialization_coreDeserializationStrategy>)deserializer previousValue:(id _Nullable)previousValue __attribute__((swift_name("decodeSerializableElement(descriptor:index:deserializer:previousValue:)")));
+- (int16_t)decodeShortElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeShortElement(descriptor:index:)")));
+- (NSString *)decodeStringElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeStringElement(descriptor:index:)")));
+- (void)endStructureDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("endStructure(descriptor:)")));
 @property (readonly) CIBOISDKKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
 @end
 
@@ -2799,34 +3217,6 @@ __attribute__((swift_name("Ktor_httpContentType.Companion")))
 @property (class, readonly, getter=shared) CIBOISDKKtor_httpContentTypeCompanion *shared __attribute__((swift_name("shared")));
 - (CIBOISDKKtor_httpContentType *)parseValue:(NSString *)value __attribute__((swift_name("parse(value:)")));
 @property (readonly) CIBOISDKKtor_httpContentType *Any __attribute__((swift_name("Any")));
-@end
-
-__attribute__((swift_name("Kotlinx_serialization_coreSerializersModule")))
-@interface CIBOISDKKotlinx_serialization_coreSerializersModule : CIBOISDKBase
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
-- (void)dumpToCollector:(id<CIBOISDKKotlinx_serialization_coreSerializersModuleCollector>)collector __attribute__((swift_name("dumpTo(collector:)")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
-- (id<CIBOISDKKotlinx_serialization_coreKSerializer> _Nullable)getContextualKClass:(id<CIBOISDKKotlinKClass>)kClass typeArgumentsSerializers:(NSArray<id<CIBOISDKKotlinx_serialization_coreKSerializer>> *)typeArgumentsSerializers __attribute__((swift_name("getContextual(kClass:typeArgumentsSerializers:)")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
-- (id<CIBOISDKKotlinx_serialization_coreSerializationStrategy> _Nullable)getPolymorphicBaseClass:(id<CIBOISDKKotlinKClass>)baseClass value:(id)value __attribute__((swift_name("getPolymorphic(baseClass:value:)")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
-- (id<CIBOISDKKotlinx_serialization_coreDeserializationStrategy> _Nullable)getPolymorphicBaseClass:(id<CIBOISDKKotlinKClass>)baseClass serializedClassName:(NSString * _Nullable)serializedClassName __attribute__((swift_name("getPolymorphic(baseClass:serializedClassName:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -3217,79 +3607,6 @@ __attribute__((swift_name("KotlinIterator")))
 @required
 - (BOOL)hasNext __attribute__((swift_name("hasNext()")));
 - (id _Nullable)next __attribute__((swift_name("next()")));
-@end
-
-__attribute__((swift_name("Kotlinx_serialization_coreCompositeEncoder")))
-@protocol CIBOISDKKotlinx_serialization_coreCompositeEncoder
-@required
-- (void)encodeBooleanElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(BOOL)value __attribute__((swift_name("encodeBooleanElement(descriptor:index:value:)")));
-- (void)encodeByteElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(int8_t)value __attribute__((swift_name("encodeByteElement(descriptor:index:value:)")));
-- (void)encodeCharElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(unichar)value __attribute__((swift_name("encodeCharElement(descriptor:index:value:)")));
-- (void)encodeDoubleElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(double)value __attribute__((swift_name("encodeDoubleElement(descriptor:index:value:)")));
-- (void)encodeFloatElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(float)value __attribute__((swift_name("encodeFloatElement(descriptor:index:value:)")));
-- (id<CIBOISDKKotlinx_serialization_coreEncoder>)encodeInlineElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("encodeInlineElement(descriptor:index:)")));
-- (void)encodeIntElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(int32_t)value __attribute__((swift_name("encodeIntElement(descriptor:index:value:)")));
-- (void)encodeLongElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(int64_t)value __attribute__((swift_name("encodeLongElement(descriptor:index:value:)")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
-- (void)encodeNullableSerializableElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index serializer:(id<CIBOISDKKotlinx_serialization_coreSerializationStrategy>)serializer value:(id _Nullable)value __attribute__((swift_name("encodeNullableSerializableElement(descriptor:index:serializer:value:)")));
-- (void)encodeSerializableElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index serializer:(id<CIBOISDKKotlinx_serialization_coreSerializationStrategy>)serializer value:(id _Nullable)value __attribute__((swift_name("encodeSerializableElement(descriptor:index:serializer:value:)")));
-- (void)encodeShortElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(int16_t)value __attribute__((swift_name("encodeShortElement(descriptor:index:value:)")));
-- (void)encodeStringElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index value:(NSString *)value __attribute__((swift_name("encodeStringElement(descriptor:index:value:)")));
-- (void)endStructureDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("endStructure(descriptor:)")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
-- (BOOL)shouldEncodeElementDefaultDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("shouldEncodeElementDefault(descriptor:index:)")));
-@property (readonly) CIBOISDKKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
-@end
-
-__attribute__((swift_name("KotlinAnnotation")))
-@protocol CIBOISDKKotlinAnnotation
-@required
-@end
-
-__attribute__((swift_name("Kotlinx_serialization_coreSerialKind")))
-@interface CIBOISDKKotlinx_serialization_coreSerialKind : CIBOISDKBase
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@end
-
-__attribute__((swift_name("Kotlinx_serialization_coreCompositeDecoder")))
-@protocol CIBOISDKKotlinx_serialization_coreCompositeDecoder
-@required
-- (BOOL)decodeBooleanElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeBooleanElement(descriptor:index:)")));
-- (int8_t)decodeByteElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeByteElement(descriptor:index:)")));
-- (unichar)decodeCharElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeCharElement(descriptor:index:)")));
-- (int32_t)decodeCollectionSizeDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("decodeCollectionSize(descriptor:)")));
-- (double)decodeDoubleElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeDoubleElement(descriptor:index:)")));
-- (int32_t)decodeElementIndexDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("decodeElementIndex(descriptor:)")));
-- (float)decodeFloatElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeFloatElement(descriptor:index:)")));
-- (id<CIBOISDKKotlinx_serialization_coreDecoder>)decodeInlineElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeInlineElement(descriptor:index:)")));
-- (int32_t)decodeIntElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeIntElement(descriptor:index:)")));
-- (int64_t)decodeLongElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeLongElement(descriptor:index:)")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
-- (id _Nullable)decodeNullableSerializableElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index deserializer:(id<CIBOISDKKotlinx_serialization_coreDeserializationStrategy>)deserializer previousValue:(id _Nullable)previousValue __attribute__((swift_name("decodeNullableSerializableElement(descriptor:index:deserializer:previousValue:)")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
-- (BOOL)decodeSequentially __attribute__((swift_name("decodeSequentially()")));
-- (id _Nullable)decodeSerializableElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index deserializer:(id<CIBOISDKKotlinx_serialization_coreDeserializationStrategy>)deserializer previousValue:(id _Nullable)previousValue __attribute__((swift_name("decodeSerializableElement(descriptor:index:deserializer:previousValue:)")));
-- (int16_t)decodeShortElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeShortElement(descriptor:index:)")));
-- (NSString *)decodeStringElementDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeStringElement(descriptor:index:)")));
-- (void)endStructureDescriptor:(id<CIBOISDKKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("endStructure(descriptor:)")));
-@property (readonly) CIBOISDKKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
 @end
 
 
