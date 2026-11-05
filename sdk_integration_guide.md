@@ -59,15 +59,15 @@ pod 'CIBOneIdSDK', :git => 'https://github.com/SeeSharp-Solutions-Sdn-Bhd/cib-on
 
 ## 2. Configuration & Initialization
 
-Tenant credentials are loaded directly from `res/values/strings.xml` (Android) or `Info.plist` (iOS).
+Client credentials (`X-Client-Id` and `X-Client-Secret`) are loaded directly from `res/values/strings.xml` (Android) or `Info.plist` (iOS).
+
+> **Note**: `tenantId` and `appId` do **not** need to be configured in host files. These values are automatically resolved and cached at runtime when calling `getSdkConfig()`.
 
 ### Host Configuration
 
 **Android (`res/values/strings.xml`)**
 ```xml
 <resources>
-    <string name="x_tenant_id">your-tenant-id</string>
-    <string name="x_app_id">your-app-id</string>
     <string name="x_client_id">your-client-id</string>
     <string name="x_client_secret">your-client-secret</string>
 </resources>
@@ -75,17 +75,13 @@ Tenant credentials are loaded directly from `res/values/strings.xml` (Android) o
 
 **iOS (`Info.plist`)**
 ```xml
-<key>X-Tenant-Id</key>
-<string>your-tenant-id</string>
-<key>X-App-Id</key>
-<string>your-app-id</string>
 <key>X-Client-Id</key>
 <string>your-client-id</string>
 <key>X-Client-Secret</key>
 <string>your-client-secret</string>
 ```
 
-> **Note**: Key aliases such as `cib_tenant_id` or `CIBTenantID` are also supported. Social provider keys (Google Client ID, Apple Service ID, Facebook App ID) can be retrieved dynamically at runtime via `getSdkConfig()` without needing to be hardcoded in your app bundle.
+> **Note**: Key aliases such as `cib_client_id` / `CIBClientID` and `cib_client_secret` / `CIBClientSecret` are also supported. All other settings—including `tenantId`, `appId`, and social provider keys (Google Client ID, Apple Service ID, Facebook App ID)—are retrieved dynamically at runtime via `getSdkConfig()`.
 
 ### Client Initialization
 
@@ -178,6 +174,12 @@ do {
   - `facebook.enabled`: Whether Facebook Login is enabled.
   - `facebook.appId`: Facebook App ID.
   - `facebook.clientToken`: Facebook Client Token.
+
+**How It Works:**
+- Automatically cached in-memory (`SdkConfigCache`).
+- Dynamically resolves `tenantId` and `appId` for all subsequent authentication and OTP requests (eliminating the need to configure them in `strings.xml` or `Info.plist`).
+- Social logins (`loginWithGoogle`, `loginWithFacebook`, `loginWithApple`) automatically use cached keys (e.g., Google `serverClientId`, Apple `serviceId`, Facebook `appId`).
+- Clears automatically when the app process terminates, or manually via `cibClient.clearSdkConfigCache()`.
 
 ---
 

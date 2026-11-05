@@ -40,34 +40,14 @@ pod install
 
 ### iOS Host Configuration (`Info.plist`)
 
-Add your tenant credentials and social configuration to your host app's `Info.plist`:
+Add your client credentials to your host app's `Info.plist` (`tenantId`, `appId`, and social provider credentials are automatically retrieved at runtime via `getSdkConfig()`):
 
 ```xml
-<!-- CIB OneID Core Credentials -->
-<key>CIBTenantID</key>
-<string>your-tenant-id</string>
-<key>CIBAppID</key>
-<string>app_ios_v1</string>
+<!-- CIB OneID Client Credentials -->
 <key>CIBClientID</key>
 <string>your-client-id</string>
 <key>CIBClientSecret</key>
 <string>your-client-secret</string>
-<key>CIBAppName</key>
-<string>My App</string>
-
-<!-- Google Sign-In -->
-<key>GIDServerClientID</key>
-<string>your-google-server-client-id.apps.googleusercontent.com</string>
-<key>GIDClientID</key>
-<string>your-google-client-id.apps.googleusercontent.com</string>
-
-<!-- Facebook Sign-In -->
-<key>FacebookAppID</key>
-<string>your-facebook-app-id</string>
-<key>FacebookClientToken</key>
-<string>your-facebook-client-token</string>
-<key>FacebookDisplayName</key>
-<string>My App</string>
 ```
 
 ---
@@ -98,25 +78,13 @@ dependencies {
 
 ### Android Host Configuration (`res/values/strings.xml`)
 
-Add your tenant credentials and social configuration to your app's `res/values/strings.xml`:
+Add your client credentials to your app's `res/values/strings.xml` (`tenantId`, `appId`, and social provider credentials are automatically retrieved at runtime via `getSdkConfig()`):
 
 ```xml
 <resources>
-    <!-- CIB OneID Core Credentials -->
-    <string name="cib_tenant_id">your-tenant-id</string>
-    <string name="cib_app_id">app_android_v1</string>
+    <!-- CIB OneID Client Credentials -->
     <string name="cib_client_id">your-client-id</string>
     <string name="cib_client_secret">your-client-secret</string>
-    <string name="cib_app_name">My App</string>
-
-    <!-- Google Sign-In (OAuth Web / Server Client ID) -->
-    <string name="google_server_client_id">your-google-server-client-id.apps.googleusercontent.com</string>
-    <!-- Note: default_web_client_id from google-services.json is also automatically detected! -->
-
-    <!-- Facebook Sign-In -->
-    <string name="facebook_app_id">your-facebook-app-id</string>
-    <string name="facebook_client_token">your-facebook-client-token</string>
-    <string name="facebook_permissions">public_profile,email</string>
 </resources>
 ```
 
@@ -124,7 +92,7 @@ Add your tenant credentials and social configuration to your app's `res/values/s
 
 ## 3. Quick Start & SDK Initialization
 
-All values (`clientId`, `clientSecret`, `appId`, `tenantId`, Google server client ID, Facebook App ID, etc.) are extracted automatically from `Info.plist` (iOS) or `strings.xml` (Android).
+Client credentials (`clientId`, `clientSecret`) are extracted automatically from `Info.plist` (iOS) or `strings.xml` (Android). All other configuration (`tenantId`, `appId`, Google server client ID, Facebook App ID, etc.) is dynamically resolved at runtime via `getSdkConfig()`.
 
 ### iOS Usage (Swift)
 
