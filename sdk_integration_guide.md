@@ -28,7 +28,7 @@ dependencies {
     implementation(project(":ciboneid-sdk-core"))
     
     // OR if using the binary distribution AAR:
-    // implementation(files("libs/ciboneid-sdk-core-1.0.3.aar"))
+    // implementation(files("libs/ciboneid-sdk-core-1.0.4.aar"))
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
 }
@@ -47,12 +47,12 @@ Add the package dependency using:
 ```
 https://github.com/SeeSharp-Solutions-Sdn-Bhd/cib-oneid-sdk.git
 ```
-Select **Up to Next Major Version** starting at `1.0.3` and link `CIBOneIdSDK` to your app target.
+Select **Up to Next Major Version** starting at `1.0.4` and link `CIBOneIdSDK` to your app target.
 
 #### Option B: CocoaPods
 Add the pod dependency to your `Podfile`:
 ```ruby
-pod 'CIBOneIdSDK', :git => 'https://github.com/SeeSharp-Solutions-Sdn-Bhd/cib-oneid-sdk.git', :tag => '1.0.3'
+pod 'CIBOneIdSDK', :git => 'https://github.com/SeeSharp-Solutions-Sdn-Bhd/cib-oneid-sdk.git', :tag => '1.0.4'
 ```
 
 ---
@@ -220,6 +220,11 @@ if let success = result as? CIBResultSuccess<LoginGoogleResponse> {
     print("Logged in as: \(user?.email ?? "")")
 }
 ```
+
+> [!TIP]
+> **iOS Zero-Dependency OAuth Flow**:
+> On iOS, Google Sign-In runs directly via Apple's `ASWebAuthenticationSession` with PKCE (RFC 7636). Host apps do **not** need the native Google Sign-In SDK (`pod 'GoogleSignIn'`), nor do they need URL scheme dispatching in `AppDelegate.application(_:open:options:)`. Callback redirect interception is handled automatically by the web authentication session.
+
 
 ### Example Response (`LoginGoogleResponse` / `SocialLoginExchangeResponse`)
 ```json
