@@ -224,6 +224,28 @@ if let success = result as? CIBResultSuccess<LoginGoogleResponse> {
 > [!TIP]
 > **iOS Zero-Dependency OAuth Flow**:
 > On iOS, Google Sign-In runs directly via Apple's `ASWebAuthenticationSession` with PKCE (RFC 7636). Host apps do **not** need the native Google Sign-In SDK (`pod 'GoogleSignIn'`), nor do they need URL scheme dispatching in `AppDelegate.application(_:open:options:)`. Callback redirect interception is handled automatically by the web authentication session.
+>
+> **Important - iOS Client ID Configuration**:
+> Google OAuth strictly forbids custom scheme URIs (`com.googleusercontent.apps.<prefix>:/oauth2redirect`) for **Web application** client types (which results in `Error 400: invalid_request - Custom scheme URIs are not allowed for 'WEB' client type`).
+> 1. In [Google Cloud Console](https://console.cloud.google.com/apis/credentials), create an OAuth Client ID with **Application type: iOS** and specify your iOS **Bundle Identifier**.
+> 2. Add the iOS Client ID to your iOS app's `Info.plist` using the standard `GIDClientID` (or `CIBGoogleClientID`) key:
+> ```xml
+> <key>GIDClientID</key>
+> <string>YOUR_IOS_CLIENT_ID.apps.googleusercontent.com</string>
+> ```
+> 3. Add the reversed client ID URL scheme to your `CFBundleURLTypes` in `Info.plist`:
+> ```xml
+> <key>CFBundleURLTypes</key>
+> <array>
+>     <dict>
+>         <key>CFBundleURLSchemes</key>
+>         <array>
+>             <string>com.googleusercontent.apps.YOUR_IOS_CLIENT_ID_PREFIX</string>
+>         </array>
+>     </dict>
+> </array>
+> ```
+> The SDK automatically uses `GIDClientID` on iOS for the authorization redirect while retaining `serverClientId` (the Web Client ID) for server-side token validation.
 
 
 ### Example Response (`LoginGoogleResponse` / `SocialLoginExchangeResponse`)
@@ -290,6 +312,15 @@ if let success = result as? CIBResultSuccess<LoginFacebookResponse> {
     print("Facebook login success: \(success.data.user?.email ?? "")")
 }
 ```
+
+> [!TIP]
+> **Zero Host App Boilerplate & Privacy**:
+> - **Classic Login & App Tracking Transparency (ATT)**: The SDK implements Facebook Classic Login (`FBSDKLoginTrackingEnabled`). Upon triggering Facebook login, if tracking status is `notDetermined`, the SDK prompts the user via `ATTrackingManager.requestTrackingAuthorization` and automatically updates `FBSDKSettings.sharedSettings().setIsAdvertiserTrackingEnabled(...)`.
+> - **Info.plist Requirement**: Add `NSUserTrackingUsageDescription` to your host app's `Info.plist` (e.g., `<key>NSUserTrackingUsageDescription</key><string>This app uses tracking to personalize your Facebook login experience.</string>`).
+> - **Pre-prompting ATT (Optional)**: If you prefer requesting tracking permission at app start or before login, call `NativeSocialAuthBridge.shared.requestAppTrackingTransparency { authorized in ... }`.
+> - **Dynamic Credential Configuration**: The SDK automatically extracts `facebook.appId` and `facebook.clientToken` from the dynamic configuration (`getSdkConfig()`) and initializes `FBSDKSettings` and `FBSDKApplicationDelegate` at runtime. Hardcoding keys in `Info.plist` is optional.
+> - **Zero-Setup Web Login**: If the host app has not registered custom `fb<AppId>` URL schemes, the SDK automatically uses secure browser-based login sheet (`appSwitch = .disabled`). This eliminates broken redirects and requires **no** URL callback wiring in `AppDelegate` or `SceneDelegate`.
+> - **Native App Switch (Optional)**: If you register `fb<AppId>` in `CFBundleURLTypes`, the SDK enables native Facebook app switching, and `NativeSocialAuthBridge.shared.handleOpenUrl(url:)` can be forwarded from `application(_:open:options:)` or `scene(_:openURLContexts:)`.
 
 ### Example Response (`LoginFacebookResponse` / `SocialLoginExchangeResponse`)
 ```json
