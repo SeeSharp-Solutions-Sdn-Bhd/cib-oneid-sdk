@@ -354,7 +354,16 @@ if let success = result as? CIBResultSuccess<LoginFacebookResponse> {
 
 #### 3. Sign in with Apple (`loginWithApple`)
 
-**Kotlin / Swift**
+**iOS (Swift) Native UI Sheet**
+```swift
+// Launch native iOS Sign in with Apple authorization sheet:
+let result = try await cibClient.loginWithApple()
+if let success = result as? CIBResultSuccess<LoginAppleResponse> {
+    print("Apple login success. User: \(success.data.user?.email ?? "")")
+}
+```
+
+**Token Validation / Custom Flow (Kotlin / Swift)**
 ```kotlin
 val result = cibClient.loginWithApple(
     code = "c0123456789abcdef...",
